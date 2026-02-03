@@ -13,15 +13,16 @@ public:
     WrappedText(
         const std::string& Content,
         float FontSize,
-        int MaxWidth)
+        int MaxWidth, TTF_HorizontalAlignment Alignment = TTF_HORIZONTAL_ALIGN_CENTER )
         :Text{FontSize}, MaxWidth{MaxWidth} {
+            TTF_SetFontWrapAlignment(Font, Alignment);
             CreateSurface(Content);
         };
     ~WrappedText() {};
     
 private:
     void CreateSurface(const std::string& Content) {
-        SDL_DestroySurface ( TextSurface );
+        SDL_DestroySurface (TextSurface);
         TextSurface = TTF_RenderText_Blended_Wrapped (
             Font, Content.c_str(), 0, {225, 255, 255, 255}, MaxWidth
         );

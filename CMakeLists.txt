@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.23)
 
 project(
-    MyGame 
-    VERSION 1.0
-    DESCRIPTION "My Farm Game"
-    LANGUAGES CXX
+  Minesweeper
+  VERSION 1.0
+  DESCRIPTION "Minesweeper"
+  LANGUAGES CXX
 )
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Set the exec and lib output
 set(
   CMAKE_RUNTIME_OUTPUT_DIRECTORY
   "${CMAKE_BINARY_DIR}/$<CONFIGURATION>"
@@ -20,41 +20,37 @@ set(
   "${CMAKE_BINARY_DIR}/$<CONFIGURATION>"
 )
 
-add_executable( 
-    MyGame 
-    src/Main.cpp 
-    src/Window.cpp
-    src/Rectangle.cpp
-    src/Button.cpp
-    src/Image.cpp
+add_executable(Minesweeper
+  src/Main.cpp
+  
+  # This file will be added later in the chapter
+  src/Minesweeper/Cell.cpp
 )
 
-# To make rpath valid
+target_include_directories(Minesweeper
+  PRIVATE ${PROJECT_SOURCE_DIR}/src
+)
+
 if(APPLE)
-  set_target_properties(MyGame PROPERTIES
+  set_target_properties(Minesweeper PROPERTIES
     INSTALL_RPATH "@executable_path;@loader_path"
     BUILD_WITH_INSTALL_RPATH TRUE
     MACOSX_RPATH TRUE
   )
 elseif(UNIX)
-  set_target_properties(MyGame PROPERTIES
+  set_target_properties(Minesweeper PROPERTIES
     INSTALL_RPATH "$ORIGIN"
     BUILD_WITH_INSTALL_RPATH TRUE
   )
 endif()
 
-# Specify that we want to build SDL_TTF's dependencies
-set(SDLTTF_VENDORED ON) 
-
-# Set a variable for our vendor directory
-set(VENDOR_DIR "${PROJECT_SOURCE_DIR}/vendor") 
-
-# Add the SDL libraries from our submodules
-add_subdirectory(${VENDOR_DIR}/SDL) 
-add_subdirectory(${VENDOR_DIR}/SDL_image) 
+set(SDLTTF_VENDORED ON)
+set(VENDOR_DIR "${PROJECT_SOURCE_DIR}/vendor")
+add_subdirectory(${VENDOR_DIR}/SDL)
+add_subdirectory(${VENDOR_DIR}/SDL_image)
 add_subdirectory(${VENDOR_DIR}/SDL_ttf)
 
-target_link_libraries(MyGame
+target_link_libraries(Minesweeper
   SDL3::SDL3
   SDL3_image::SDL3_image
   SDL3_ttf::SDL3_ttf

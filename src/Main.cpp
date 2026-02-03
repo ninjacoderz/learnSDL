@@ -1,40 +1,51 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
-#include "Window.h"
-#include "Image.h"
+#include <SDL3_image/SDL_image.h>
 #include <SDL3_ttf/SDL_ttf.h>
-#include "Text.h"
-#include "ScaledText.h"
-#include "TruncatedText.h"
+
+#include "Globals.h"
+#include "Engine/Window.h"
+#include "Minesweeper/UI.h"
 
 int main(int, char**) {
 
   SDL_Init(SDL_INIT_VIDEO);
+
+  #ifdef SHOW_DEBUG_HELPERS
+    Utils::CheckSDLError("SDL_Init");
+  #endif
+
   TTF_Init();
 
-  Window GameWindow;
+  #ifdef SHOW_DEBUG_HELPERS
+    Utils::CheckSDLError("TTF_Init");
+  #endif
 
-  TruncatedText TextExample{
-    "The quick brown fox jumps over the lazy dog",
-    36.0f,
-    GameWindow.GetWidth()
-  };
+  Engine::Window GameWindow;
+  MinesweeperUI UI;
 
-  bool IsRunning = true ; 
-  SDL_Event Event; 
-  while (IsRunning)
+  SDL_Event Event;
+  bool shouldQuit{false};
+  
+
+
+  GameWindow.Render();
+    
+  
+  while (!shouldQuit)
   {
-    while (SDL_PollEvent(&Event))
-    {
-      if( Event.type == SDL_EVENT_QUIT){
-        IsRunning = false;
+      SDL_Event Event;
+      if (SDL_WaitEvent(&Event)) {
+          if (Event.type == SDL_EVENT_QUIT) {
+              shouldQuit = true;
+          } else {
+              UI.HandleEvent(Event);
+          }
+          UI.Render(GameWindow.GetSurface());
+          GameWindow.Update(); 
       }
-    }
-    GameWindow.Render();
-    TextExample.Render(GameWindow.GetSurface());
-    GameWindow.Update();
-
   }
+
   TTF_Quit();
   SDL_Quit();
   return 0;
