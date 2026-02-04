@@ -6,29 +6,46 @@
 #include <SDL3_image/SDL_image.h>
 #include <SDL3_ttf/SDL_ttf.h>
 
+#include <SDL3/SDL.h>
+
 class Window {
-    public: 
-        Window();
-        ~Window();
+public:
+    Window() {
+        SDLWindow = SDL_CreateWindow(
+            "My Program", 600, 300, 0
+        );
+    }
 
-        Window(const Window&) = delete;
-        Window& operator=(const Window&) = delete;
-        
-        SDL_Surface* GetSurface() const;
-        void Render();
-        void Update();
+    void Render() {
+        const auto* Fmt = SDL_GetPixelFormatDetails(
+            GetSurface()->format
+        );
+        SDL_FillSurfaceRect(
+            GetSurface(),
+            nullptr,
+            SDL_MapRGB(Fmt, nullptr, 50, 50, 50)
+        );
+    }
 
-        int GetWidth() const { return WindowWidth; }
-        int GetHeight() const { return 300; }
+    void Update() {
+        SDL_UpdateWindowSurface(SDLWindow);
+    }
 
-        void TakeScreenshot() const {
-            IMG_SaveJPG(
-            GetSurface(), "Screenshot.jpg", 90
-            );
+    SDL_Surface* GetSurface() const {
+        return SDL_GetWindowSurface(SDLWindow);
+    }
+
+    Window(const Window&) = delete;
+    Window& operator=(const Window&) = delete;
+
+    ~Window() {
+        if (SDLWindow && SDL_WasInit(SDL_INIT_VIDEO)) {
+            SDL_DestroyWindow(SDLWindow);
         }
-    private: 
-        SDL_Window* mSDL_Window = nullptr;
-        int WindowWidth{600};
+    }
+
+private:
+    SDL_Window* SDLWindow{nullptr};
 };
 
 #endif

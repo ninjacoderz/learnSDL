@@ -20,10 +20,11 @@ public:
             for ( int Row = 0; Row < GRID_ROWS; Row ++ ) {
                 constexpr int Spacing{CELL_SIZE + PADDING};
                 // Consider
-                Children.emplace_back(
-                    x + Spacing * (Col), y + Spacing * (Row),
+                MinesweeperCell cell { x + Spacing * (Col), y + Spacing * (Row),
                     CELL_SIZE, CELL_SIZE, 
-                    Row, Col
+                    Row, Col};
+                Children.emplace_back(
+                   cell
                 );
             }
         }

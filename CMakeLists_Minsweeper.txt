@@ -21,7 +21,10 @@ set(
 )
 
 add_executable(Minesweeper
-  src/main.cpp
+  src/Main.cpp
+  
+  # This file will be added later in the chapter
+  src/Minesweeper/Cell.cpp
 )
 
 target_include_directories(Minesweeper
