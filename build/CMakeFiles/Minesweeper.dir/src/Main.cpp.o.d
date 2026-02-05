@@ -1,5 +1,5 @@
-CMakeFiles/Minesweeper.dir/src/Main.cpp.o: \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Main.cpp \
+CMakeFiles/Minesweeper.dir/src/main.cpp.o: \
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/main.cpp \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_stdinc.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_platform_defines.h \
@@ -165,7 +165,6 @@ CMakeFiles/Minesweeper.dir/src/Main.cpp.o: \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_image/include/SDL3_image/SDL_image.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_ttf/include/SDL3_ttf/SDL_ttf.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Globals.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/version \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
@@ -1027,66 +1026,7 @@ CMakeFiles/Minesweeper.dir/src/Main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Engine/Window.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Engine/../Globals.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Minesweeper/UI.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Minesweeper/Grid.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Minesweeper/Cell.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Engine/Button.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Engine/Rectangle.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Engine/Image.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Engine/Text.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Minesweeper/../Engine/Random.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/generate_canonical.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/binomial_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/cauchy_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/chi_squared_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/gamma_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/exponential_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/default_random_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/linear_congruential_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/is_seed_sequence.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/discard_block_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/discrete_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/accumulate.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/adjacent_difference.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/inner_product.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/iota.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/exclusive_scan.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/gcd_lcm.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/inclusive_scan.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/pstl.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/reduce.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_exclusive_scan.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_inclusive_scan.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/midpoint.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/saturation_arithmetic.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/execution \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_execution_policy.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/extreme_value_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/fisher_f_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/geometric_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/negative_binomial_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/poisson_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/clamp_to_integral.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/normal_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/independent_bits_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/knuth_b.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/shuffle_order_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/lognormal_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/mersenne_twister_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/piecewise_constant_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/piecewise_linear_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/random_device.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/ranlux.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/subtract_with_carry_engine.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/seed_seq.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Minesweeper/NewGameButton.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Minesweeper/FlagCounter.h
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/World.h \
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/GameObject.h \
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Goblin.h \
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Window.h

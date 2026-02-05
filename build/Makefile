@@ -312,53 +312,29 @@ plutosvg/fast:
 	$(MAKE) $(MAKESILENT) -f vendor/SDL_ttf/external/plutosvg-guild/CMakeFiles/plutosvg.dir/build.make vendor/SDL_ttf/external/plutosvg-guild/CMakeFiles/plutosvg.dir/build
 .PHONY : plutosvg/fast
 
-src/Main.o: src/Main.cpp.o
-.PHONY : src/Main.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/Main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/Main.cpp.o
-.PHONY : src/Main.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/Main.i: src/Main.cpp.i
-.PHONY : src/Main.i
-
-# target to preprocess a source file
-src/Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/Main.cpp.i
-.PHONY : src/Main.cpp.i
-
-src/Main.s: src/Main.cpp.s
-.PHONY : src/Main.s
-
-# target to generate assembly for a file
-src/Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/Main.cpp.s
-.PHONY : src/Main.cpp.s
-
-src/Minesweeper/Cell.o: src/Minesweeper/Cell.cpp.o
-.PHONY : src/Minesweeper/Cell.o
-
-# target to build an object file
-src/Minesweeper/Cell.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/Minesweeper/Cell.cpp.o
-.PHONY : src/Minesweeper/Cell.cpp.o
-
-src/Minesweeper/Cell.i: src/Minesweeper/Cell.cpp.i
-.PHONY : src/Minesweeper/Cell.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/Minesweeper/Cell.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/Minesweeper/Cell.cpp.i
-.PHONY : src/Minesweeper/Cell.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/Minesweeper/Cell.s: src/Minesweeper/Cell.cpp.s
-.PHONY : src/Minesweeper/Cell.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/Minesweeper/Cell.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/Minesweeper/Cell.cpp.s
-.PHONY : src/Minesweeper/Cell.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minesweeper.dir/build.make CMakeFiles/Minesweeper.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -384,12 +360,9 @@ help:
 	@echo "... harfbuzz"
 	@echo "... plutosvg"
 	@echo "... plutovg"
-	@echo "... src/Main.o"
-	@echo "... src/Main.i"
-	@echo "... src/Main.s"
-	@echo "... src/Minesweeper/Cell.o"
-	@echo "... src/Minesweeper/Cell.i"
-	@echo "... src/Minesweeper/Cell.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

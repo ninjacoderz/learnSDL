@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Main.cpp" "CMakeFiles/Minesweeper.dir/src/Main.cpp.o" "gcc" "CMakeFiles/Minesweeper.dir/src/Main.cpp.o.d"
-  "/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Minesweeper/Cell.cpp" "CMakeFiles/Minesweeper.dir/src/Minesweeper/Cell.cpp.o" "gcc" "CMakeFiles/Minesweeper.dir/src/Minesweeper/Cell.cpp.o.d"
+  "/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/main.cpp" "CMakeFiles/Minesweeper.dir/src/main.cpp.o" "gcc" "CMakeFiles/Minesweeper.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
