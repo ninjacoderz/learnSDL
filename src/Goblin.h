@@ -1,24 +1,21 @@
 #pragma once
-#include <iostream>
 #include <string>
+#include <iostream>
 #include "GameObject.h"
 
-class Goblin: public GameObject {
-public: 
-    Goblin(const std::string& name, int x, int y) : 
-        Name{name}, xPosition{x}, yPosition{y}{};
+class Goblin : public GameObject {
+ public:
+  Goblin(const std::string& name, float x, float y)
+    : Name(name), xPosition(x), yPosition(y) {}
 
-    void Tick() override {
-        std::cout << "\nTick() updating position";
-        xPosition += 1;
-    }
+  void Tick(float TimeDelta) override {
+    xPosition += Velocity * TimeDelta;
+    std::cout << "Goblin position: "
+      << xPosition << '\n';
+  }
 
-    void Render(SDL_Surface* Surface) override {
-        std::cout  << " - Rendering at x = " << xPosition;
-    }
-
-    std::string Name;
-    int xPosition;
-    int yPosition;
-    
+  std::string Name;
+  float xPosition;
+  float yPosition;
+  float Velocity{100.0f};
 };

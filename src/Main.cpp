@@ -1,43 +1,52 @@
+#define SDL_MAIN_USE_CALLBACKS 1
+
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
-#include <SDL3_image/SDL_image.h>
-#include <SDL3_ttf/SDL_ttf.h>
-#include <iostream>
-
-#include "World.h"
-#include "GameObject.h"
 #include "Window.h"
-#include "Goblin.h"
+#include "World.h"
 
-int main(int, char**) {
-  SDL_Init(SDL_INIT_VIDEO);
-
+struct GameState {
   Window GameWindow;
   World GameWorld;
+  bool IsRunning{true};
+  Uint64 PreviousFrame{0};
+};
 
-  Goblin& Enemy{GameWorld.SpawnGoblin(
-    "Goblin Rogue", 100, 200)};
-  std::cout << "A " << Enemy.Name
-    << " was spawned in the world";
+SDL_AppResult SDL_AppInit( void** AppState, int, char** ) {
+  SDL_Init(SDL_INIT_VIDEO);
+  GameState* State{ new GameState()};
+  State->GameWorld.SpawnGoblin("Goblin Rogue", 100, 200);
+  State->PreviousFrame = SDL_GetTicks();
+  *AppState = State;
+  return SDL_APP_CONTINUE;
+}
 
-  bool IsRunning = true;
-  SDL_Event Event;
-  while (IsRunning) {
-    while (SDL_PollEvent(&Event)) {
-      if (Event.type == SDL_EVENT_QUIT) {
-        IsRunning = false;
-      }
-      GameWorld.HandleEvent(Event);
-    }
-
-    GameWorld.Tick();
-
-    GameWindow.Render();
-    GameWorld.Render(GameWindow.GetSurface());
-
-    GameWindow.Update();
+SDL_AppResult SDL_AppEvent(void* AppState, SDL_Event* Event ){
+  GameState* State = static_cast<GameState*>(AppState);
+  if (Event->type == SDL_EVENT_QUIT) {
+    return SDL_APP_SUCCESS;
+  } else {
+    State->GameWorld.HandleEvent(*Event);
   }
+  
+  return SDL_APP_CONTINUE;
+}
 
-  SDL_Quit();
-  return 0;
+SDL_AppResult SDL_AppIterate(void * AppState) {
+  GameState* State = static_cast<GameState*>(AppState);
+  Uint64 ThisFrame = SDL_GetTicks();
+  Uint64 TimeDelta = ThisFrame - State->PreviousFrame;
+  State->GameWorld.Tick(TimeDelta / 1000.0f);
+  State->GameWindow.Render() ;
+  State->GameWorld.Render(
+    State->GameWindow.GetSurface()
+  );
+  State->GameWindow.Update();
+  return SDL_APP_CONTINUE;
+}
+
+void SDL_AppQuit(
+  void* AppState, SDL_AppResult Result
+) {
+  delete static_cast<GameState*>(AppState);
 }

@@ -1002,6 +1002,7 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_locale.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_log.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main.h \
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main_impl.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_messagebox.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_metal.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_misc.h \
@@ -1029,12 +1030,8 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_touch.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_tray.h \
   /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_version.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_video.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_image/include/SDL3_image/SDL_image.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_ttf/include/SDL3_ttf/SDL_ttf.h
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_video.h
 
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_ttf/include/SDL3_ttf/SDL_ttf.h:
 
 /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_version.h:
 
@@ -1539,6 +1536,8 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_signed_integer.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_scalar.h:
+
+/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main_impl.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_same.h:
 
@@ -2495,8 +2494,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/istreambuf_iterator.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_pop_heap.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_image/include/SDL3_image/SDL_image.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_int_distribution.h:
 

@@ -6,7 +6,7 @@ C_DEFINES =
 
 C_INCLUDES = -I/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/build/vendor/SDL/include-revision -I/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include
 
-C_FLAGSarm64 =  -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+C_FLAGSarm64 =  -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
 
-C_FLAGS =  -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+C_FLAGS =  -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
 

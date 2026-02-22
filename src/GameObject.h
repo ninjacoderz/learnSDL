@@ -6,9 +6,8 @@ class GameObject {
         virtual void HandleEvent(const SDL_Event& Event){ 
             //
         }
-        virtual void Tick(){ 
-
-        }
+        virtual void Tick(float TimeDelta) {}
+        
         virtual void Render(SDL_Surface* Surface) {
 
         }

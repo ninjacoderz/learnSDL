@@ -9,15 +9,20 @@ class  World
 {
 public:
 
+    template <typename T, typename... Args> T& SpawnObject (Args&&... args) {
+        Objects.emplace_back(std::make_unique<T>(std::forward<Args>(args)...));
+        return static_cast <T&> (*Objects.back());
+    }
+
     void HandleEvent(const SDL_Event& Event) {
         for(auto& Object: Objects) {
             Object->HandleEvent(Event);
         }
     }
 
-    void Tick() {
+    void Tick(float TimeDelta) {
         for (auto& Object: Objects){
-            Object->Tick();
+            Object->Tick(TimeDelta);
         }
     }
     

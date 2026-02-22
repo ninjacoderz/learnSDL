@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src -I/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/build/vendor/SDL/include-revision -I/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include -I/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_image/include -I/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_ttf/include
 
-CXX_FLAGSarm64 = -std=gnu++20 -arch arm64
+CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -fPIE
 
-CXX_FLAGS = -std=gnu++20 -arch arm64
+CXX_FLAGS = -std=gnu++20 -arch arm64 -fPIE
 

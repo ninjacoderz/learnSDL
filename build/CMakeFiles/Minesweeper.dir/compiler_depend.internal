@@ -1003,6 +1003,7 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_locale.h
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_log.h
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main.h
+ /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main_impl.h
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_messagebox.h
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_metal.h
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_misc.h
@@ -1031,6 +1032,4 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_tray.h
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_version.h
  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_video.h
- /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_image/include/SDL3_image/SDL_image.h
- /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL_ttf/include/SDL3_ttf/SDL_ttf.h
 
