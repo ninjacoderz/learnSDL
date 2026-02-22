@@ -38,7 +38,9 @@ SDL_AppResult SDL_AppIterate(void * AppState) {
   Uint64 TimeDelta = ThisFrame - State->PreviousFrame;
   State->GameWorld.Tick(TimeDelta / 1000.0f);
   State->GameWindow.Render() ;
-  State->GameWorld.Render( State->GameWindow.GetSurface() );
+  State->GameWorld.Render(
+    State->GameWindow.GetSurface()
+  );
   State->GameWindow.Update();
   return SDL_APP_CONTINUE;
 }
