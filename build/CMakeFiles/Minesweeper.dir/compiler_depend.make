@@ -5,9 +5,7 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/___wctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__wctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__xlocale.h \
@@ -965,135 +963,17 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/GameObject.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Goblin.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Window.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/World.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_assert.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_asyncio.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_atomic.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_audio.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_begin_code.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_bits.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_blendmode.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_camera.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_clipboard.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_close_code.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_cpuinfo.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_dialog.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_dlopennote.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_endian.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_error.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_events.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_filesystem.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_gamepad.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_gpu.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_guid.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_haptic.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_hidapi.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_hints.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_init.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_iostream.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_joystick.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_keyboard.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_keycode.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_loadso.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_locale.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_log.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main_impl.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_messagebox.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_metal.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_misc.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_mouse.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_mutex.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_oldnames.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_pen.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_pixels.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_platform.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_platform_defines.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_power.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_process.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_properties.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_rect.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_render.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_scancode.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_sensor.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_stdinc.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_storage.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_surface.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_system.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_thread.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_time.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_timer.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_touch.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_tray.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_version.h \
-  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_video.h
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Observer.h \
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Player.h \
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Subject.h \
+  /Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/UIManager.h
 
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_version.h:
+/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/UIManager.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_touch.h:
+/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Subject.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_timer.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_thread.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_storage.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_sensor.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_scancode.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_render.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_rect.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_properties.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_power.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_platform_defines.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_mouse.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_misc.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_loadso.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_keycode.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_keyboard.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_joystick.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_iostream.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_haptic.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_gpu.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_gamepad.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_endian.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_dlopennote.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_dialog.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_close_code.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_atomic.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_asyncio.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Window.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Goblin.h:
+/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Observer.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h:
 
@@ -1102,6 +982,8 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/limits.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_size_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_rsize_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_ptrdiff_t.h:
 
@@ -1126,8 +1008,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xlocale/___wctype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_messagebox.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:
 
@@ -1182,8 +1062,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_nlink_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_cpuinfo.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mach_port_t.h:
 
@@ -1261,8 +1139,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_platform.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_ptrcheck.h:
@@ -1284,8 +1160,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/arm/_structs.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/locale.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_hints.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h:
 
@@ -1315,13 +1189,15 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdlib.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/from_range.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdio.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/merge.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/print:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/GameObject.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream:
 
@@ -1350,8 +1226,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_is_heap.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_events.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/identity.h:
 
@@ -1461,8 +1335,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/type_list.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_filesystem.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/vector.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h:
@@ -1536,8 +1408,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_signed_integer.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_scalar.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_main_impl.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_same.h:
 
@@ -1618,8 +1488,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/has_unique_object_representation.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/extent.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_error.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/datasizeof.h:
 
@@ -1704,10 +1572,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_push_heap.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/size.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdio.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/from_range.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/destructible.h:
 
@@ -1825,11 +1689,7 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/swap_allocator.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_mutex.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/allocator.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_pen.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/allocation_guard.h:
 
@@ -1890,8 +1750,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory_resource/memory_resource.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_clipboard.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_constructible.h:
 
@@ -1955,8 +1813,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/erase_if_container.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_time.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/support.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/swap_ranges.h:
@@ -2006,6 +1862,12 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/_OSByteOrder.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/istream.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_unsigned.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/fstream.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/remove_cv.h:
 
@@ -2159,8 +2021,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/next.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_camera.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_abort.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/swappable.h:
@@ -2198,8 +2058,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint16_t.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_begin_code.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/next_permutation.h:
 
@@ -2254,8 +2112,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/dependent_type.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/support/c11.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_log.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/countr.h:
 
@@ -2393,8 +2249,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/fence.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_oldnames.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_remove_copy.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/atomic_sync.h:
@@ -2456,8 +2310,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_backward.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/transform.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_tray.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h:
 
@@ -2531,16 +2383,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_sort_heap.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_guid.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_endian.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/set_difference.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/terminate.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__mutex/mutex.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_shuffle.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/maybe_const.h:
@@ -2579,6 +2421,20 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/nothrow_t.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/string_view.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/can_extract_key.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_generate_n.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/disjunction.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/pstl.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_lexicographical_compare.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdlib:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/common_iterator.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_partial_sort.h:
@@ -2595,8 +2451,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/error_functions.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_system.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/exchange.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_sample.h:
@@ -2604,24 +2458,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_set_symmetric_difference.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_any_of.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdlib:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/string_view.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/can_extract_key.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_generate_n.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/disjunction.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_stdinc.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/pstl.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_lexicographical_compare.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_assert.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/aligned_union.h:
 
@@ -2655,8 +2491,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/assume_aligned.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_bits.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/format_error.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binder1st.h:
@@ -2672,8 +2506,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_const.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_blendmode.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_pointer.h:
 
@@ -2693,6 +2525,12 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/lexicographical_compare.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/terminate.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_endian.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/set_difference.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/trigonometric_functions.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/endian.h:
@@ -2703,6 +2541,12 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_count_if.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hyperbolic_functions.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/locale_base_api.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_move.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_reverse_copy.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string/extern_template_lists.h:
@@ -2710,8 +2554,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/all_of.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_pixels.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__system_error/error_code.h:
 
@@ -2752,8 +2594,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ostream/put_character_sequence.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/counted_iterator.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_audio.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_mismatch.h:
 
@@ -2811,8 +2651,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_locale_t.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_video.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_floating_point.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctype.h:
@@ -2843,8 +2681,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_metal.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/inplace_merge.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/view_interface.h:
@@ -2852,6 +2688,8 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/mem_fn.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/distance.h:
+
+/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/Player.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigaltstack.h:
 
@@ -2877,9 +2715,9 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_find_end.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_merge.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__mutex/mutex.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/src/World.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_merge.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_mb_cur_max.h:
 
@@ -2899,8 +2737,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h:
 
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_init.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/partial_sum.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_printf.h:
@@ -2916,8 +2752,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/range_formatter.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_locale.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h:
 
@@ -2935,14 +2769,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_in_result.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/any_of.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_sort.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_sorted.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/roots.h:
@@ -2956,20 +2782,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/alloca.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/align_val_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/compare_partial_order_fallback.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_bounds.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_unsigned.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/fstream.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/pop_heap.h:
 
@@ -2993,16 +2805,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/as_const.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__xlocale.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/indirectly_comparable.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/operations.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_hidapi.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_remove_copy_if.h:
@@ -3010,6 +2812,14 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/atomic_lock_free.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__xlocale.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/indirectly_comparable.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/operations.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h:
 
@@ -3025,12 +2835,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__condition_variable/condition_variable.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hyperbolic_functions.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/locale_base_api.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_move.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_abstract.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_limits.h:
@@ -3038,8 +2842,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_stable_sort.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_convertible.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_process.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/add_cv_quals.h:
 
@@ -3059,6 +2861,20 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_equal_range.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_sort.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/aliasing_iterator.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/count.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/align_val_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/compare_partial_order_fallback.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_bounds.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/includes.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/desugars_to.h:
@@ -3066,16 +2882,6 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find_first_of.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__vector/swap.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/aliasing_iterator.h:
-
-/Users/binhnguyenthanh/Documents/GameProgramming/SDL3/FarmGame/vendor/SDL/include/SDL3/SDL_surface.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/count.h:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_rsize_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/fill_n.h:
 
@@ -3092,3 +2898,5 @@ CMakeFiles/Minesweeper.dir/src/main.cpp.o: /Users/binhnguyenthanh/Documents/Game
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_move_backward.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/___wctype.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/any_of.h:
