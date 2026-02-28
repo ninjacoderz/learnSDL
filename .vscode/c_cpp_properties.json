@@ -3,7 +3,8 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/vendor/SDL/include",
+                "${workspaceFolder}/vendor/SDL_image/include",
                 "${workspaceFolder}/vendor/SDL_ttf/include"
             ],
             "defines": [],
