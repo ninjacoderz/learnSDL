@@ -57,6 +57,7 @@ namespace Config {
 
 namespace UserEvents{
     inline const Uint32 ADVANCE{SDL_RegisterEvents(1)};
+    inline const Uint32 APPLE_EATEN{SDL_RegisterEvents(1)};
 }
 
 inline void CheckSDLError(const std::string &Msg) {

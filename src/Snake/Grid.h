@@ -18,6 +18,7 @@ public:
     void Update(Uint64 DeltaTime);
     void Render(SDL_Surface* Surface);
 
+    void PlaceRandomApple();
 
 private:
     std::vector<Cell> Cells;

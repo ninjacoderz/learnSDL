@@ -81,12 +81,24 @@ void Cell::Advance(const SDL_UserEvent& event) {
   };
 
   if (isThisCell) {
+    if (State == CellState::Apple) {
+      SDL_Event Event{};
+      Event.type = UserEvents::APPLE_EATEN;
+      SDL_PushEvent(&Event);
+    }
     State = CellState::Snake;
     SnakeDuration = Data->Length;
+
   } else if (State == CellState::Snake) {
     --SnakeDuration;
     if (SnakeDuration == 0) {
       State = CellState::Empty;
     }
   }
+}
+
+bool Cell::PlaceApple() {
+  if (State != CellState::Empty) return false;
+  State = CellState::Apple;
+  return true;
 }

@@ -10,6 +10,10 @@ public:
         if (E.type == SDL_EVENT_KEY_DOWN) {
             HandleKeyEvent(E.key);
         }
+
+        if (E.type == UserEvents::APPLE_EATEN) {
+            Snake.Length ++;
+        }
     };
     void Update(Uint32 DeltaTime) {
         ElapsedTime += DeltaTime;

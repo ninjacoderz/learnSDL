@@ -19,6 +19,8 @@ public:
 
     void Advance(const SDL_UserEvent& E);
 
+    bool PlaceApple();
+
 private:
     int Row;
     int Column;
