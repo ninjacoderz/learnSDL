@@ -22,7 +22,6 @@ void Grid::HandleEvents(const SDL_Event &event) {
     }
 
     if (event.type == UserEvents::APPLE_EATEN) {
-        std::cout << "Random Placement";
         PlaceRandomApple();
     }
 }
@@ -42,8 +41,6 @@ void Grid::Render(SDL_Surface *Surface) {
 void Grid::PlaceRandomApple() {
     while (true) {
         const int RandNums = Engine::Random::Int(0, Cells.size() - 1);
-        std::cout << "Randome:" << Cells.size() << "  " << RandNums << std::endl;
-        if (Cells[RandNums].PlaceApple()) break;
-        std::cout << "Randome:" << RandNums << std::endl;
+        if ( Cells[RandNums].PlaceApple() ) break;
     }
 }

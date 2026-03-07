@@ -3,8 +3,10 @@
 #include <SDL3_image/SDL_image.h>
 #include <SDL3_ttf/SDL_ttf.h>
 
+#include "GameState.h"
 #include "Globals.h"
 #include "Engine/Window.h"
+#include "SnakeUI.h"
 
 int main(int, char**) {
     SDL_Init(SDL_INIT_VIDEO);
@@ -14,6 +16,9 @@ int main(int, char**) {
     CheckSDLError("Initializing SDL_ttf");
 
     Engine::Window GameWindow = Engine::Window();
+    // Grid grid = Grid(Assets);
+    SnakeUI UI = SnakeUI();
+    GameState State = GameState();
 
     Uint64 PreviousTick{SDL_GetTicks()};
     Uint64 CurrentTick;

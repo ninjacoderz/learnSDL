@@ -25,6 +25,8 @@ add_executable(Snake
         src/Snake/Cell.cpp
         src/Snake/Grid.cpp
         src/Snake/Grid.h
+        src/Snake/RestartButton.h
+        src/Snake/ScoreCounter.h
 )
 
 target_include_directories(Snake
