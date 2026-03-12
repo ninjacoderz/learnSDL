@@ -1,15 +1,25 @@
+//
+// Created by Binh Nguyen Thanh on 7/3/26.
+//
+
+#ifndef _WINDOW_H
+#define _WINDOW_H
+
 #pragma once
+#include <iostream>
 #include <SDL3/SDL.h>
 
-#include "Globals.h"
-
-namespace Engine {
 class Window {
-   public:
+public:
     Window() {
-        SDLWindow = SDL_CreateWindow(Config::GAME_NAME.c_str(), Config::WINDOW_WIDTH,
-                                     Config::WINDOW_HEIGHT, 0);
-        CheckSDLError("Creating Window");
+        SDLWindow = SDL_CreateWindow(
+          "Composition Example",
+          700, 300, 0
+        );
+        if (!SDLWindow) {
+            std::cerr << "Window could not be created! SDL_Error: "
+              << SDL_GetError() << std::endl;
+        }
     }
 
     ~Window() {
@@ -22,17 +32,27 @@ class Window {
     Window& operator=(const Window&) = delete;
 
     void Render() {
-        const auto* Fmt = SDL_GetPixelFormatDetails(GetSurface()->format);
-        SDL_FillSurfaceRect(GetSurface(), nullptr,
-                            SDL_MapRGB(Fmt, nullptr, Config::BACKGROUND_COLOR.r,
-                                       Config::BACKGROUND_COLOR.g, Config::BACKGROUND_COLOR.b));
+        const auto* Fmt{SDL_GetPixelFormatDetails(
+          GetSurface()->format
+        )};
+        SDL_FillSurfaceRect(
+          GetSurface(), nullptr,
+          SDL_MapRGB(Fmt, nullptr, 220, 220, 220));
     }
 
-    void Update() { SDL_UpdateWindowSurface(SDLWindow); }
+    void Update() {
+        SDL_UpdateWindowSurface(SDLWindow);
+    }
 
-    SDL_Surface* GetSurface() { return SDL_GetWindowSurface(SDLWindow); }
+    SDL_Surface* GetSurface() {
+        if (SDLWindow) {
+            return SDL_GetWindowSurface(SDLWindow);
+        }
+        return nullptr;
+    }
 
-   private:
+private:
     SDL_Window* SDLWindow{nullptr};
 };
-}  // namespace Engine
+
+#endif //_WINDOW_H

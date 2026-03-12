@@ -1,50 +1,53 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
-#include <SDL3_image/SDL_image.h>
-#include <SDL3_ttf/SDL_ttf.h>
-
-#include "Globals.h"
 #include "Engine/Window.h"
+#include "Scene.h"
 
-int main(int, char**) {
+int main(int argc, char** argv) {
     SDL_Init(SDL_INIT_VIDEO);
-    CheckSDLError("Initializing SDL");
+    Window GameWindow;
+    Scene GameScene;
 
-    TTF_Init();
-    CheckSDLError("Initializing SDL_ttf");
-
-    Engine::Window GameWindow = Engine::Window();
-
-    Uint64 PreviousTick{SDL_GetTicks()};
-    Uint64 CurrentTick;
-    Uint64 DeltaTime;
-
-    SDL_Event Event;
+    Uint64 LastTick = SDL_GetPerformanceCounter();
     bool IsRunning = true;
-    while (IsRunning) {
-        CurrentTick = SDL_GetTicks();
-        DeltaTime = CurrentTick - PreviousTick;
+    SDL_Event Event;
 
+    const float TargetFPS = 60.0f;
+    const float TargetFrameTime = 1.0f / TargetFPS; // ~0.0166s
+
+    while (IsRunning) {
         while (SDL_PollEvent(&Event)) {
-            UI.HandleEvent(Event);
-            State.HandleEvents(Event);
             if (Event.type == SDL_EVENT_QUIT) {
                 IsRunning = false;
             }
+            GameScene.HandleEvent(Event);
         }
 
-        State.Update(DeltaTime);
-        UI.Update(DeltaTime);
+        Uint64 CurrentTick = SDL_GetPerformanceCounter();
+        float DeltaTime = static_cast<float>(CurrentTick - LastTick) /
+                          (float)SDL_GetPerformanceFrequency();
+        LastTick = CurrentTick;
 
+        // Tick
+        GameScene.Update(DeltaTime);
+
+        // Render
         GameWindow.Render();
-        UI.Render(GameWindow.GetSurface());
-
+        GameScene.Render(GameWindow.GetSurface());
+        // Swap
         GameWindow.Update();
 
-        PreviousTick = CurrentTick;
+        Uint64 Entick = SDL_GetPerformanceCounter();
+        float FrameTime = (float)(Entick - CurrentTick) / (float)SDL_GetPerformanceFrequency();
+
+        if (FrameTime > TargetFrameTime) {
+            Uint32 DelayMs = (Uint32)(TargetFrameTime - FrameTime * 1000.0f);
+            if (DelayMs > 0) {
+                SDL_Delay(DelayMs);
+            }
+        }
     }
 
-    TTF_Quit();
     SDL_Quit();
     return 0;
 }
