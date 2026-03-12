@@ -14,6 +14,8 @@
 #include "TransformComponent.h"
 #include <ranges>
 
+#include "InputComponent.h"
+
 using namespace std;
 
 using ComponentPtr = std::unique_ptr<Component>;
@@ -149,6 +151,25 @@ public:
         return Components
                | std::views::transform(ToImagePtr)
                | std::views::filter(IsNotNull);
+    }
+
+    InputComponent *AddInputComponent() {
+        if (GetInputComponent()) {
+            std::cout << "Error: Cannot have "
+                "multiple input components";
+            return nullptr;
+        }
+        std::unique_ptr<Component>& Component = Components.emplace_back(std::make_unique<InputComponent>(this));
+        return dynamic_cast<InputComponent *>(Component.get());
+    }
+
+    InputComponent* GetInputComponent() const {
+        for (const ComponentPtr& Component: Components) {
+            if (auto Ptr = dynamic_cast<InputComponent *>(Component.get())) {
+                return Ptr;
+            }
+        }
+        return nullptr;
     }
 
     string GetName() { return Name; };

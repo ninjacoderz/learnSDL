@@ -25,6 +25,8 @@ add_executable(Snake
         src/Component.cpp
         src/ImageComponent.cpp
         src/Character.h
+        src/InputComponent.h
+        src/InputComponent.cpp
 )
 
 target_include_directories(Snake

@@ -44,6 +44,7 @@ public:
         );
         NewCharacter->AddImageComponent();
         NewCharacter->AddImageComponent();
+        NewCharacter->AddInputComponent();
     };
 
     void HandleEvent(SDL_Event &Event) {

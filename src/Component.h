@@ -16,8 +16,9 @@ public:
     virtual ~Component() = default;
 
     virtual void Initialize() {}
-    virtual void OnComponentRemoved() {}
-    virtual void Update(float DeltaTime) {};
+    virtual void OnComponentRemoved(Component * component) {}
+    virtual void Update(float DeltaTime) {}
+
     virtual void Render(SDL_Surface* surface) {};
     virtual void HandleEvent(const SDL_Event& event) {};
 

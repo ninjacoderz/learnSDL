@@ -13,7 +13,7 @@ class TransformComponent: public Component {
 public:
     using Component::Component;
 
-    ~TransformComponent() {}
+    ~TransformComponent() override = default;
 
     void Update(float DeltaTime) override {
         std::cout << "TransformComponent Updated\n " << std::endl;
@@ -21,6 +21,10 @@ public:
 
     Vec2 GetPosition() const {
         return Position;
+    }
+
+    void Move(const Vec2& Delta) {
+        Position += Delta;
     }
 
 private:
