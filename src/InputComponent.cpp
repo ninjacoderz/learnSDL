@@ -8,23 +8,32 @@
 #include "Entity.h"
 #include "TransformComponent.h"
 
+namespace {
+    // Factory function for moving left (negative X)
+    CommandPtr CreateMoveLeftCommand() {
+        return std::make_unique<MovementCommand>(
+            Vec2{-5.0, 0.0});
+    }
+
+    // Factory function for moving right (positive X)
+    CommandPtr CreateMoveRightCommand() {
+        return std::make_unique<MovementCommand>(
+            Vec2{5.0, 0.0});
+    }
+}
+
+void InputComponent::Initialize() {
+    Component::Initialize();
+    BindKeyDown(SDLK_LEFT, CreateMoveLeftCommand);
+    BindKeyDown(SDLK_RIGHT, CreateMoveRightCommand);
+}
+
 void InputComponent::HandleEvent(const SDL_Event &event) {
     if (event.type == SDL_EVENT_KEY_DOWN) {
         if (!GetOwner()) return;
-        TransformComponent* Transform = GetOwner()->GetComponent<TransformComponent>();
-        if (!Transform) return;
-
-        switch (event.key.key) {
-            case SDLK_LEFT:
-                Transform->Move({-1.0, 0.0});
-                std::cout << "InputComponent::HandleEvent: Left key down" << std::endl;
-                break;
-            case SDLK_RIGHT:
-                Transform->Move({1.0, 0.0});
-                std::cout << "InputComponent::HandleEvent: Right key down" << std::endl;
-                break;
-            default:
-                break;
+        if (const SDL_Keycode Key{event.key.key}; KeyDownBindings.contains(Key)) {
+            CommandPtr Command{KeyDownBindings[Key]()};
+            Owner->HandleCommand(std::move(Command));
         }
     }
 }

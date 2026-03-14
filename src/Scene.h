@@ -19,32 +19,27 @@ using EntityPtrList = std::vector<EntityPtr>;
 class Scene {
 public:
     Scene() {
-        EntityPtr &NewEntity{
-            Entities.emplace_back(
-                std::make_unique<Entity>("Test")
-            )
-        };
-        NewEntity->AddImageComponent();
-        NewEntity->AddImageComponent();
-        NewEntity->AddImageComponent();
-        NewEntity->AddTransformComponent();
-        std::cout << "Image Component Count: "
-                << std::ranges::distance(
-                    NewEntity->GetImageComponents());
+        std::string BasePath{SDL_GetBasePath()};
+        auto* Player = Entities.emplace_back(std::make_unique<Entity>("Player")).get();
+        Player->AddTransformComponent();
+        Player->AddImageComponent(BasePath + "player.png");
+
+        EntityPtr &Enemy = Entities.emplace_back(std::make_unique<Entity>("Enemy"));
+        Enemy->AddTransformComponent();
+        Enemy->AddImageComponent(BasePath + "dragon.png");
+
+        std::cout << "\nDoing something with"
+                    " an ImageComponent...";
+        // ...
+
 
         for (ImageComponent *Component:
-             NewEntity->GetImageComponents()) {
+             Player->GetImageComponents()) {
             std::cout << "\nDoing something with"
                     " an ImageComponent...";
             // ...
              }
 
-        EntityPtr& NewCharacter = Entities.emplace_back(
-            std::make_unique<Character>()
-        );
-        NewCharacter->AddImageComponent();
-        NewCharacter->AddImageComponent();
-        NewCharacter->AddInputComponent();
     };
 
     void HandleEvent(SDL_Event &Event) {

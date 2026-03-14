@@ -4,6 +4,7 @@
 #include "Scene.h"
 
 int main(int argc, char** argv) {
+
     SDL_Init(SDL_INIT_VIDEO);
     Window GameWindow;
     Scene GameScene;

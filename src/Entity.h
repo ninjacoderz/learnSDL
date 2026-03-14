@@ -14,6 +14,7 @@
 #include "TransformComponent.h"
 #include <ranges>
 
+#include "Commands.h"
 #include "InputComponent.h"
 
 using namespace std;
@@ -119,38 +120,27 @@ public:
                 "a component not found on this entity.\n";
     }
 
-    ImageComponent *AddImageComponent() {
-        ComponentPtr &Component = Components.emplace_back(std::make_unique<ImageComponent>(this));
+    ImageComponent *AddImageComponent(const std::string& FilePath) {
+        ComponentPtr& Component = Components.emplace_back(
+            std::make_unique<ImageComponent>(this, FilePath)
+        );
         Component->Initialize();
-        return dynamic_cast<ImageComponent *>(Component.get());
+        return static_cast<ImageComponent *>(Component.get());
     }
 
-    using ImageComponents = std::vector<ImageComponent *>;
-
-    auto GetImageComponents() const {
-        // Define the transformation:
-        //   ComponentPtr -> ImageComponent*
-        auto ToImagePtr{
-            [](const ComponentPtr &component) {
-                return dynamic_cast<ImageComponent *>(component.get());
+    using ImageComponents = std::vector<ImageComponent*>;
+    ImageComponents GetImageComponents() const {
+        ImageComponents Result;
+        std::cout << "Ok"<< Components.size();
+        for (const ComponentPtr& C : Components) {
+            std::cout << "Ok";
+            if (auto Ptr{dynamic_cast<
+              ImageComponent*>(C.get())}
+            ) {
+                Result.push_back(Ptr);
             }
-        };
-
-        // Define the filter:
-        //    Keep only non-nullptr pointers
-        auto IsNotNull{
-            [](ImageComponent *Ptr) {
-                return Ptr != nullptr;
-            }
-        };
-
-        // Create the view:
-        // 1. View the Components vector.
-        // 2. Transform each element using ToImagePtr.
-        // 3. Filter the results using IsNotNull.
-        return Components
-               | std::views::transform(ToImagePtr)
-               | std::views::filter(IsNotNull);
+        }
+        return Result;
     }
 
     InputComponent *AddInputComponent() {
@@ -160,6 +150,7 @@ public:
             return nullptr;
         }
         std::unique_ptr<Component>& Component = Components.emplace_back(std::make_unique<InputComponent>(this));
+        Component->Initialize();
         return dynamic_cast<InputComponent *>(Component.get());
     }
 
@@ -170,6 +161,10 @@ public:
             }
         }
         return nullptr;
+    }
+
+    virtual void HandleCommand(std::unique_ptr<Command> Cmd) {
+        Cmd->Execute(this);
     }
 
     string GetName() { return Name; };

@@ -10,7 +10,7 @@ class Character : public Entity {
     public:
     Character() : Entity("Character") {
         Transform = AddTransformComponent();
-        Image = AddImageComponent();
+        Image = AddImageComponent("character.png");
     }
 
     void SayHello () const {
