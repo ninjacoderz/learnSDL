@@ -19,28 +19,16 @@ using EntityPtrList = std::vector<EntityPtr>;
 class Scene {
 public:
     Scene() {
-        std::string BasePath{SDL_GetBasePath()};
-        auto* Player = Entities.emplace_back(std::make_unique<Entity>("Player")).get();
+        std::string BasePath = SDL_GetBasePath();
+
+        EntityPtr& Player = Entities.emplace_back(std::make_unique<Entity>("Player"));
         Player->AddTransformComponent();
         Player->AddImageComponent(BasePath + "player.png");
 
         EntityPtr &Enemy = Entities.emplace_back(std::make_unique<Entity>("Enemy"));
         Enemy->AddTransformComponent();
         Enemy->AddImageComponent(BasePath + "dragon.png");
-
-        std::cout << "\nDoing something with"
-                    " an ImageComponent...";
-        // ...
-
-
-        for (ImageComponent *Component:
-             Player->GetImageComponents()) {
-            std::cout << "\nDoing something with"
-                    " an ImageComponent...";
-            // ...
-             }
-
-    };
+    }
 
     void HandleEvent(SDL_Event &Event) {
         // Forward event handling to all entities
