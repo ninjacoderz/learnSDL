@@ -13,6 +13,7 @@
 #include "ImageComponent.h"
 #include "TransformComponent.h"
 #include <ranges>
+#include <utility>
 
 #include "Commands.h"
 #include "InputComponent.h"
@@ -26,8 +27,7 @@ class Entity {
 public:
     virtual ~Entity() = default;
 
-    Entity(string Name) : Name(Name) {
-    };
+    explicit Entity(string Name) : Name(std::move(Name)) {};
 
     virtual void Update(float DeltaTime) {
         for (ComponentPtr &Component: Components) {
@@ -93,15 +93,13 @@ public:
                     "multiple transform components";
             return nullptr;
         }
-        ComponentPtr &Component = Components.emplace_back( std::make_unique<TransformComponent>(this ));
-        return dynamic_cast<TransformComponent *>(Component.get());
+        auto *Component = AddComponent<TransformComponent>();
+        return Component;
     }
 
     TransformComponent *GetTransformComponent() {
-        for (ComponentPtr &Component: Components) {
-            if (auto Ptr = dynamic_cast<TransformComponent *>(Component.get())) {
-                return Ptr;
-            }
+        if (auto *Component = GetComponent<TransformComponent>()) {
+            return Component;
         }
         return nullptr;
     }
