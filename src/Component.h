@@ -7,8 +7,12 @@
 
 #pragma once
 #include <SDL3/SDL.h>
-class Entity;
 
+#include "Vec2.h"
+
+class Scene;
+class Entity;
+class AssetManager;
 class Component {
 public:
     explicit Component(Entity* Owner) : Owner(Owner) {}
@@ -22,8 +26,13 @@ public:
     virtual void Render(SDL_Surface* surface) {};
     virtual void HandleEvent(const SDL_Event& event) {};
 
-    Entity* GetOwner() const { return Owner; }
+    virtual void DrawDebugHelpers(SDL_Surface* Surface) {}
 
+    Vec2 GetOwnerPosition() const;
+
+    Entity* GetOwner() const { return Owner; }
+    AssetManager& GetAssetManager() const;
+    Scene& GetScene() const;
 protected:
     Entity* Owner = nullptr;
 };

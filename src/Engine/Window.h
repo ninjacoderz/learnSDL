@@ -14,7 +14,7 @@ public:
     Window() {
         SDLWindow = SDL_CreateWindow(
           "Composition Example",
-          700, 300, 0
+          1024, 768, 0
         );
         if (!SDLWindow) {
             std::cerr << "Window could not be created! SDL_Error: "
@@ -40,7 +40,7 @@ public:
           SDL_MapRGB(Fmt, nullptr, 220, 220, 220));
     }
 
-    void Update() {
+    void Update() const {
         SDL_UpdateWindowSurface(SDLWindow);
     }
 
@@ -52,7 +52,7 @@ public:
     }
 
 private:
-    SDL_Window* SDLWindow{nullptr};
+    SDL_Window* SDLWindow = nullptr;
 };
 
 #endif //_WINDOW_H

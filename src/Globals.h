@@ -41,12 +41,14 @@ namespace Config {
 
     inline constexpr int FOOTER_HEIGHT{60};
 
-    inline constexpr int WINDOW_HEIGHT{
-        GRID_HEIGHT +  + FOOTER_HEIGHT + PADDING * 2
-    };
-    inline constexpr int WINDOW_WIDTH{
-        GRID_WIDTH + PADDING * 2
-    };
+    inline constexpr int WINDOW_HEIGHT = 768;
+    // {
+    //     GRID_HEIGHT +  + FOOTER_HEIGHT + PADDING * 2
+    // };
+    inline constexpr int WINDOW_WIDTH  = 1024;
+    // {
+    //     GRID_WIDTH + PADDING * 2
+    // };
     inline constexpr SDL_Color CELL_COLOR_A{
         171, 214, 82, 255
     };

@@ -5,15 +5,21 @@
 #include <iostream>
 #include "Component.h"
 #include "Entity.h"
+#include "Scene.h"
 
-void AnimationComponent::Update(float DeltaTime) {
-    std::cout << Owner->GetName() << ": Animating\n";
+Vec2 Component::GetOwnerPosition() const {
+    TransformComponent* Transform = GetOwner()->GetComponent<TransformComponent>();
+    if (!Transform) {
+        std::cerr << "Entity does not have a TransformComponent!" << std::endl;
+        return {0, 0};
+    }
+    return Transform->GetPosition();
 }
 
-void AudioComponent::Update(float DeltaTime) {
-    std::cout << Owner->GetName() << ": Audio\n";
+AssetManager & Component::GetAssetManager() const {
+    return GetScene().GetAssetManager();
 }
 
-void PhysicsComponent::Update(float DeltaTime) {
-    std::cout << Owner->GetName() << ": Physics\n";
+Scene & Component::GetScene() const {
+    return GetOwner()->GetScene();
 }

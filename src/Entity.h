@@ -17,7 +17,8 @@
 
 #include "Commands.h"
 #include "InputComponent.h"
-
+#define DRAW_DEBUG_HELPERS
+class Scene;
 using namespace std;
 
 using ComponentPtr = std::unique_ptr<Component>;
@@ -27,7 +28,8 @@ class Entity {
 public:
     virtual ~Entity() = default;
 
-    explicit Entity(string Name) : Name(std::move(Name)) {};
+    explicit Entity(Scene& Scene) : OwningScene{Scene} {}
+    [[nodiscard]] Scene& GetScene() const { return OwningScene; }
 
     virtual void Update(float DeltaTime) {
         for (ComponentPtr &Component: Components) {
@@ -35,10 +37,16 @@ public:
         }
     };
 
-    virtual void Render(SDL_Surface *surface) {
+    virtual void Render(SDL_Surface *Surface) {
         for (ComponentPtr &Component: Components) {
-            Component->Render(surface);
+            Component->Render(Surface);
         }
+
+        #ifdef DRAW_DEBUG_HELPERS
+        for (ComponentPtr& C : Components) {
+            C->DrawDebugHelpers(Surface);
+        }
+        #endif
     };
 
     virtual void HandleEvent(const SDL_Event &event) {
@@ -165,11 +173,10 @@ public:
         Cmd->Execute(this);
     }
 
-    string GetName() { return Name; };
 
 private:
-    string Name;
     ComponentPtrList Components;
+    Scene& OwningScene;
 };
 
 class Wall : public Entity {

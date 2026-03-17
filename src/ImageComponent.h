@@ -6,18 +6,29 @@
 #define _IMAGECOMPONENT_H
 #include <string>
 #include <SDL3/SDL.h>
+
+#include "AssetManager.h"
 #include "Component.h"
 
 class ImageComponent : public Component {
 public:
     using Component::Component;
     ImageComponent(Entity* owner, const std::string& FilePath);
-    ~ImageComponent() override;
     void Render(SDL_Surface* Surface) override;
     void Initialize() override;
+    void DrawDebugHelpers(SDL_Surface*) override;
+    bool LoadNewImage(const std::string& NewPath);
+
+    void SetOffset(const Vec2& NewOffset) {
+        Offset = NewOffset;
+    }
+
+    int GetSurfaceWidth() const;
+    int GetSurfaceHeight() const;
 private:
-    SDL_Surface *ImageSurface  = nullptr;
+    std::shared_ptr<SDL_Surface> ImageSurface = nullptr;
     std::string ImageFilePath;
+    Vec2 Offset= {0, 0};
 };
 
 #endif //_IMAGECOMPONENT_H

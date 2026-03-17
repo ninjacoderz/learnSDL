@@ -24,10 +24,11 @@ add_executable(Snake
         src/main.cpp
         src/Component.cpp
         src/ImageComponent.cpp
-        src/Character.h
         src/InputComponent.h
         src/InputComponent.cpp
         src/Commands.cpp
+        src/AssetManager.h
+        src/Utilities.h
 )
 
 target_include_directories(Snake
