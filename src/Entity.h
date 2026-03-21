@@ -17,6 +17,7 @@
 
 #include "Commands.h"
 #include "InputComponent.h"
+#include "PhysicsComponent.h"
 #define DRAW_DEBUG_HELPERS
 class Scene;
 using namespace std;
@@ -173,6 +174,35 @@ public:
         Cmd->Execute(this);
     }
 
+    PhysicsComponent* AddPhysicsComponent() {
+        if (GetPhysicsComponent()) {
+            std::cerr << "Error: Cannot add multiple "
+              "PhysicsComponents to an Entity.\n";
+            return nullptr;
+        }
+
+        ComponentPtr& NewComponent{
+            Components.emplace_back(
+              std::make_unique<PhysicsComponent>(this)
+            )
+          };
+
+        NewComponent->Initialize();
+        return static_cast<PhysicsComponent*>(
+          NewComponent.get()
+        );
+    }
+
+    PhysicsComponent* GetPhysicsComponent() const {
+        for (const ComponentPtr& C : Components) {
+            if (auto Ptr{
+              dynamic_cast<PhysicsComponent*>(C.get())
+            }) {
+                return Ptr;
+            }
+        }
+        return nullptr;
+    }
 
 private:
     ComponentPtrList Components;

@@ -16,10 +16,30 @@ Vec2 Component::GetOwnerPosition() const {
     return Transform->GetPosition();
 }
 
+void Component::SetOwnerPosition(const Vec2 &position) {
+    TransformComponent* Transform = GetOwner()->GetTransformComponent();
+    if (!Transform) {
+        std::cerr << "Entity does not have a TransformComponent!" << std::endl;
+    }
+    Transform->SetPosition(position);
+}
+
 AssetManager & Component::GetAssetManager() const {
     return GetScene().GetAssetManager();
 }
 
 Scene & Component::GetScene() const {
     return GetOwner()->GetScene();
+}
+
+float Component::GetOwnerScale() const {
+    TransformComponent* Transform{
+        GetOwner()->GetTransformComponent()
+      };
+    if (!Transform) {
+        std::cerr << "Error: attempted to get scale"
+          " of an entity with no transform component\n";
+        return 1.0;
+    }
+    return Transform->GetScale();
 }

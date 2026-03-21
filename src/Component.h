@@ -27,9 +27,10 @@ public:
     virtual void HandleEvent(const SDL_Event& event) {};
 
     virtual void DrawDebugHelpers(SDL_Surface* Surface) {}
+    float GetOwnerScale() const;
 
     Vec2 GetOwnerPosition() const;
-
+    void SetOwnerPosition(const Vec2& position);
     Entity* GetOwner() const { return Owner; }
     AssetManager& GetAssetManager() const;
     Scene& GetScene() const;
@@ -44,12 +45,6 @@ public:
 };
 
 class AudioComponent : public Component {
-public:
-    using Component::Component;
-    void Update(float DeltaTime) override;
-};
-
-class PhysicsComponent : public Component {
 public:
     using Component::Component;
     void Update(float DeltaTime) override;

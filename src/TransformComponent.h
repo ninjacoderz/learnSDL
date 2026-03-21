@@ -40,8 +40,15 @@ public:
           SDL_GetPixelFormatDetails(S->format),
           nullptr, 255, 0, 0));
     }
+
+    float GetScale() const { return Scale; }
+    void SetScale(float NewScale) {
+        Scale = NewScale;
+    }
+
 private:
     Vec2 Position = {0, 0};
+    float Scale = 1.0f;
 };
 
 #endif //_TRANSFORMCOMPONENT_H

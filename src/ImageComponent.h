@@ -10,6 +10,10 @@
 #include "AssetManager.h"
 #include "Component.h"
 
+enum class ScalingMode {
+    None, Fill, Contain, Cover
+};
+
 class ImageComponent : public Component {
 public:
     using Component::Component;
@@ -25,10 +29,28 @@ public:
 
     int GetSurfaceWidth() const;
     int GetSurfaceHeight() const;
+
+    ImageComponent* SetWidth(float NewWidth);
+    ImageComponent* SetHeight(int NewHeight);
+    void ResetWith();
+    void ResetHeight();
+    float GetWidth() const;
+    float GetHeight() const;
+
+    ImageComponent* SetScalingMode(ScalingMode Mode) {
+        ScaleMode = Mode;
+        return this;
+    };
+
 private:
     std::shared_ptr<SDL_Surface> ImageSurface = nullptr;
     std::string ImageFilePath;
     Vec2 Offset= {0, 0};
+
+    float Width = -1.0f;
+    float Height = -1.0f;
+
+    ScalingMode ScaleMode{ScalingMode::Fill};
 };
 
 #endif //_IMAGECOMPONENT_H

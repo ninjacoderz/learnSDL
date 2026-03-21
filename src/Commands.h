@@ -16,12 +16,23 @@ class Command {
 
 class MovementCommand : public Command {
 public:
-    MovementCommand(Vec2 Movement): Movement(Movement) {}
     void Execute(Entity* Target) override;
     void Undo();
+
+    MovementCommand(Vec2 Velocity)
+        : Velocity(Velocity) {}
 private:
     Entity* Target;
     Vec2 Movement;
+    Vec2 Velocity;
+};
+
+class JumpCommand : public Command {
+public:
+    JumpCommand(Vec2 Impulse)
+        : Impulse(Impulse) {}
+    void Execute(Entity* Target) override;
+    Vec2 Impulse;
 };
 
 #endif //_COMMANDS_H
