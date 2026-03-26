@@ -31,7 +31,8 @@ add_executable(Snake
         src/Utilities.h
         src/PhysicsComponent.h
         src/PhysicsComponent.cpp
-        src/CollisionComponent.h
+        src/CollisionComponent.cpp
+        src/Scene.cpp
 )
 
 target_include_directories(Snake
