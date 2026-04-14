@@ -1,5 +1,5 @@
 //
-// Created by Binh Nguyen Thanh on 7/3/26.
+// Created by Binh Nguyen Thanh on 26/3/26.
 //
 
 #ifndef _WINDOW_H
@@ -13,13 +13,9 @@ class Window {
 public:
     Window() {
         SDLWindow = SDL_CreateWindow(
-          "Composition Example",
-          1024, 768, 0
+          "Scene",
+          700, 300, 0
         );
-        if (!SDLWindow) {
-            std::cerr << "Window could not be created! SDL_Error: "
-              << SDL_GetError() << std::endl;
-        }
     }
 
     ~Window() {
@@ -32,27 +28,25 @@ public:
     Window& operator=(const Window&) = delete;
 
     void Render() {
-        const auto* Fmt{SDL_GetPixelFormatDetails(
+        const auto* Fmt = SDL_GetPixelFormatDetails(
           GetSurface()->format
-        )};
+        );
+
         SDL_FillSurfaceRect(
           GetSurface(), nullptr,
           SDL_MapRGB(Fmt, nullptr, 220, 220, 220));
     }
 
-    void Update() const {
+    void Update() {
         SDL_UpdateWindowSurface(SDLWindow);
     }
 
     SDL_Surface* GetSurface() {
-        if (SDLWindow) {
-            return SDL_GetWindowSurface(SDLWindow);
-        }
-        return nullptr;
+        return SDL_GetWindowSurface(SDLWindow);
     }
 
 private:
-    SDL_Window* SDLWindow = nullptr;
+    SDL_Window* SDLWindow;
 };
 
 #endif //_WINDOW_H

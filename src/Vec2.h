@@ -1,9 +1,9 @@
 //
-// Created by Binh Nguyen Thanh on 9/3/26.
+// Created by Binh Nguyen Thanh on 26/3/26.
 //
 
-#ifndef _VEC2_H
-#define _VEC2_H
+#ifndef _VECTOR2_H
+#define _VECTOR2_H
 
 #pragma once
 #include <iostream>
@@ -22,7 +22,9 @@ struct Vec2 {
     }
 
     Vec2 Normalize() const {
-        return *this / GetLength();
+        float Len = GetLength();
+        if (Len == 0) return {0, 0};
+        return *this / Len;
     }
 
     Vec2 operator*(float Multiplier) const {
@@ -30,9 +32,7 @@ struct Vec2 {
     }
 
     Vec2 operator/(float Divisor) const {
-        if (Divisor == 0.0f) {
-            return Vec2{0, 0};
-        }
+        if (Divisor == 0.0f) { return Vec2{0, 0}; }
 
         return Vec2{x / Divisor, y / Divisor};
     }
@@ -43,10 +43,8 @@ struct Vec2 {
         return *this;
     }
 
-    Vec2 operator/=(float Divisor) {
-        if (Divisor == 0.0f) {
-            return *this;
-        }
+    Vec2& operator/=(float Divisor) {
+        if (Divisor == 0.0f) { return *this; }
 
         x /= Divisor;
         y /= Divisor;
@@ -74,10 +72,6 @@ struct Vec2 {
     Vec2 operator-() const {
         return Vec2{-x, -y};
     }
-
-    float Dot(const Vec2 Other) const {
-        return (x * Other.x) + (y * Other.y);
-    }
 };
 
 inline Vec2 operator*(float M, const Vec2& V) {
@@ -85,11 +79,10 @@ inline Vec2 operator*(float M, const Vec2& V) {
 }
 
 inline std::ostream& operator<<(
-  std::ostream& Stream, const Vec2& V
-) {
+  std::ostream& Stream, const Vec2& V) {
     Stream << "{ x = " << V.x
       << ", y = " << V.y << " }";
     return Stream;
 }
 
-#endif //_VEC2_H
+#endif //_VECTOR2_H

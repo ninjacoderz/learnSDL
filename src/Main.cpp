@@ -1,20 +1,20 @@
+//
+// Created by Binh Nguyen Thanh on 26/3/26.
+//
+
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
-#include "Engine/Window.h"
+#include "Window.h"
 #include "Scene.h"
 
 int main(int argc, char** argv) {
-
     SDL_Init(SDL_INIT_VIDEO);
     Window GameWindow;
     Scene GameScene;
 
-    Uint64 LastTick = SDL_GetPerformanceCounter();
-    bool IsRunning = true;
+    Uint64 LastTick{SDL_GetPerformanceCounter()};
     SDL_Event Event;
-
-    const float TargetFPS = 60.0f;
-    const float TargetFrameTime = 1.0f / TargetFPS; // ~0.0166s
+    bool IsRunning = true;
 
     while (IsRunning) {
         while (SDL_PollEvent(&Event)) {
@@ -24,29 +24,22 @@ int main(int argc, char** argv) {
             GameScene.HandleEvent(Event);
         }
 
-        Uint64 CurrentTick = SDL_GetPerformanceCounter();
-        float DeltaTime = static_cast<float>(CurrentTick - LastTick) /
-                          (float)SDL_GetPerformanceFrequency();
+        Uint64 CurrentTick{SDL_GetPerformanceCounter()};
+        float DeltaTime{static_cast<float>(
+          CurrentTick - LastTick) /
+          static_cast<float>(SDL_GetPerformanceFrequency())
+        };
         LastTick = CurrentTick;
 
         // Tick
-        GameScene.Update(DeltaTime);
+        GameScene.Tick(DeltaTime);
 
         // Render
         GameWindow.Render();
         GameScene.Render(GameWindow.GetSurface());
+
         // Swap
         GameWindow.Update();
-
-        Uint64 Entick = SDL_GetPerformanceCounter();
-        float FrameTime = (float)(Entick - CurrentTick) / (float)SDL_GetPerformanceFrequency();
-
-        if (FrameTime > TargetFrameTime) {
-            Uint32 DelayMs = (Uint32)(TargetFrameTime - FrameTime * 1000.0f);
-            if (DelayMs > 0) {
-                SDL_Delay(DelayMs);
-            }
-        }
     }
 
     SDL_Quit();
