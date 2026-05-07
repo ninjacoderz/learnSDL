@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
 
 project(
-        PhysicalMotion
+        MinaVillage
         VERSION 1.0
         DESCRIPTION "Snake"
         LANGUAGES CXX
@@ -20,29 +20,34 @@ set(
         "${CMAKE_BINARY_DIR}/$<CONFIGURATION>"
 )
 
-add_executable(PhysicalMotion
-        src/Main.cpp
-        src/Window.h
-        src/GameObject.cpp
-        src/GameObject.h
-        src/Image.h
-        src/Vec2.h
-        src/Scene.h
-        src/Config.h
+add_executable(MinaVillage
+        src/Main.cpp 
+        src/Actor.cpp
+        src/BGSpriteComponent.cpp
+        src/Component.cpp
+        src/Game.cpp
+        src/GameMath.cpp
+        src/SpriteComponent.cpp
+        src/AnimSpriteComponent.cpp
+        src/MultiAnimSpriteComponent.cpp
+        src/TileMapGame.cpp
+        src/SpriteSheetActor.cpp
+        src/TileMapComponent.cpp
+        src/Ship.cpp
 )
 
-target_include_directories(PhysicalMotion
+target_include_directories(MinaVillage
         PRIVATE ${PROJECT_SOURCE_DIR}/src
 )
 
 if(APPLE)
-  set_target_properties(PhysicalMotion PROPERTIES
+  set_target_properties(MinaVillage PROPERTIES
           INSTALL_RPATH "@executable_path;@loader_path"
           BUILD_WITH_INSTALL_RPATH TRUE
           MACOSX_RPATH TRUE
   )
 elseif(UNIX)
-  set_target_properties(PhysicalMotion PROPERTIES
+  set_target_properties(MinaVillage PROPERTIES
           INSTALL_RPATH "$ORIGIN"
           BUILD_WITH_INSTALL_RPATH TRUE
   )
@@ -54,7 +59,7 @@ add_subdirectory(${VENDOR_DIR}/SDL)
 add_subdirectory(${VENDOR_DIR}/SDL_image)
 add_subdirectory(${VENDOR_DIR}/SDL_ttf)
 
-target_link_libraries(PhysicalMotion
+target_link_libraries(MinaVillage
         SDL3::SDL3
         SDL3_image::SDL3_image
         SDL3_ttf::SDL3_ttf
