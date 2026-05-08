@@ -6,7 +6,6 @@
 #include <algorithm>
 #include "Actor.h"
 #include "SpriteComponent.h"
-#include "Ship.h"
 #include "BGSpriteComponent.h"
 #include "Game.h"
 #include "TileMapGame.h"
@@ -39,7 +38,6 @@ void TileMapGame::LoadData()
 	player->SetScale(1.5f);
 
     tileActor = new Actor(this);
-    
     TileMapComponent* tmap = new TileMapComponent(tileActor, 6);
     tmap->LoadTileMap_CSV("Assets/MapLayer3.csv");
     tmap->LoadTileMap_CSV("Assets/MapLayer2.csv");

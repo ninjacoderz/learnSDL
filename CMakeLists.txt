@@ -33,7 +33,6 @@ add_executable(MinaVillage
         src/TileMapGame.cpp
         src/SpriteSheetActor.cpp
         src/TileMapComponent.cpp
-        src/Ship.cpp
 )
 
 target_include_directories(MinaVillage

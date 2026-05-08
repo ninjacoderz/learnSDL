@@ -25,10 +25,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     if (!window) {
         SDL_Log("SDL_CreateWindow() failed: %s\n", SDL_GetError());
     }
-
-    if (!renderer) {
-        renderer = SDL_CreateRenderer(window, NULL);
-    }
+    
+    renderer = SDL_CreateRenderer(window, NULL);
     if (!renderer) {
         SDL_Log("SDL_CreateRenderer() failed: %s\n", SDL_GetError());
     }
@@ -44,8 +42,6 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
     if (event->type == SDL_EVENT_QUIT) {
         return SDL_APP_SUCCESS;  /* end the program, reporting success to the OS. */
     }
-
-    // game->ProcessInput();
 
     return SDL_APP_CONTINUE;  /* carry on with the program! */
 }

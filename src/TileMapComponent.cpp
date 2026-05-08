@@ -49,8 +49,12 @@ void TileMapComponent::Draw(SDL_Renderer *renderer)
 
 void TileMapComponent::LoadTileMap_CSV(std::string fileName)
 {
-    std::ifstream inFile;
-    inFile.open(fileName);
+    SDL_Log("Loading file %s", fileName.c_str());
+    std::ifstream inFile(SDL_GetBasePath() + fileName);
+    if (!inFile.is_open()) {
+        SDL_Log("Failed to open CSV file: %s",  fileName.c_str());
+        return;
+    }
     std::vector<int> *temp = new std::vector<int>;
     std::string line;
     while(std::getline(inFile,line)) {
