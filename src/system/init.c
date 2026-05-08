@@ -31,7 +31,7 @@ void initSDL(void)
 		exit(1);
 	}
 
-	if (Mix_OpenAudio(44100, SDL_AUDIO_S16, 2) < 0)
+	if (MIX_CreateMixerDevice(44100, SDL_AUDIO_S16, 2) < 0)
 	{
 		SDL_Log("Couldn't initialize SDL Mixer: %s", Mix_GetError());
 		exit(1);
