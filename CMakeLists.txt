@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.23)
 project(
         MinaVillage
         VERSION 1.0
-        DESCRIPTION "Snake"
+        DESCRIPTION "Mina Village farm country game"
         LANGUAGES CXX
 )
 
@@ -20,8 +20,11 @@ set(
         "${CMAKE_BINARY_DIR}/$<CONFIGURATION>"
 )
 
+file(GLOB SOURCES   src/defs.h src/structs.h src/*.c src/*.h src/*/*.c src/*/*.h)
+
 add_executable(MinaVillage
-        src/Main.cpp 
+        src/main.c 
+        ${SOURCES}
         src/Actor.cpp
         src/BGSpriteComponent.cpp
         src/Component.cpp
@@ -57,9 +60,11 @@ set(VENDOR_DIR "${PROJECT_SOURCE_DIR}/vendor")
 add_subdirectory(${VENDOR_DIR}/SDL)
 add_subdirectory(${VENDOR_DIR}/SDL_image)
 add_subdirectory(${VENDOR_DIR}/SDL_ttf)
+add_subdirectory(${VENDOR_DIR}/SDL_mixer)
 
 target_link_libraries(MinaVillage
         SDL3::SDL3
         SDL3_image::SDL3_image
         SDL3_ttf::SDL3_ttf
+        SDL3_mixer::SDL3_mixer
 )

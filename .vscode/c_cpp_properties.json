@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/vendor/SDL/include",
                 "${workspaceFolder}/vendor/SDL_image/include",
-                "${workspaceFolder}/vendor/SDL_ttf/include"
+                "${workspaceFolder}/vendor/SDL_ttf/include",
+                "${workspaceFolder}/vendor/SDL_mixer/include"
             ],
             "defines": [],
             "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
