@@ -8,7 +8,7 @@ struct AtlasImage
 {
 	char         filename[MAX_FILENAME_LENGTH];
 	SDL_Texture *texture;
-	SDL_Rect     rect;
+	SDL_FRect     rect;
 	int          rotated;
 	AtlasImage  *next;
 };

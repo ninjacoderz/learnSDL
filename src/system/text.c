@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2022 Parallel Realities. All rights reserved.
+ * Converted to SDL3_ttf 3.0 API
  */
 
 #include <SDL3_ttf/SDL_ttf.h>
@@ -28,9 +29,9 @@ static SDL_Texture *fontTexture;
 
 void initFonts(void)
 {
-	initFont("fonts/EnterCommand.ttf");
+    initFont("fonts/EnterCommand.ttf");
 
-	app.fontScale = 1;
+    app.fontScale = 1;
 }
 
 static void initFont(char *filename)
@@ -44,11 +45,18 @@ static void initFont(char *filename)
     memset(&glyphs, 0, sizeof(SDL_Rect) * NUM_GLYPHS);
 
     font = TTF_OpenFont(filename, FONT_SIZE);
+    if (!font)
+    {
+        SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION,
+                       SDL_LOG_PRIORITY_CRITICAL,
+                       "TTF_OpenFont failed: %s", SDL_GetError());
+        exit(1);
+    }
 
-    surface = SDL_CreateSurface(0, FONT_TEXTURE_SIZE, FONT_TEXTURE_SIZE, 32,
-                                   0, 0, 0, 0xff);
+    surface = SDL_CreateSurface(FONT_TEXTURE_SIZE, FONT_TEXTURE_SIZE,
+                                SDL_PIXELFORMAT_ARGB8888);
 
-    // SDL3: lấy format details, không còn palette
+    /* SDL3: SDL_CreateSurface không nhận masks, dùng SDL_PIXELFORMAT_ARGB8888 trực tiếp */
     const SDL_PixelFormatDetails *details =
         SDL_GetPixelFormatDetails(surface->format);
 
@@ -60,10 +68,18 @@ static void initFont(char *filename)
     for (i = ' '; i <= 'z'; i++)
     {
         c[0] = i;
-        c[1] = 0;
+        c[1] = '\0';
 
-        text = TTF_RenderUTF8_Blended(font, c, white);
-        TTF_SizeText(font, c, &dest.w, &dest.h);
+        /* SDL3_ttf: TTF_RenderUTF8_Blended → TTF_RenderText_Blended */
+        text = TTF_RenderText_Blended(font, c, 0, white);
+
+        /* SDL3_ttf: TTF_SizeText → TTF_GetStringSize, trả về bool */
+        if (!TTF_GetStringSize(font, c, 0, &dest.w, &dest.h))
+        {
+            SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION,
+                           SDL_LOG_PRIORITY_WARN,
+                           "TTF_GetStringSize failed: %s", SDL_GetError());
+        }
 
         if (dest.x + dest.w >= FONT_TEXTURE_SIZE)
         {
@@ -82,7 +98,7 @@ static void initFont(char *filename)
 
         SDL_BlitSurface(text, NULL, surface, &dest);
 
-        g = &glyphs[i];
+        g    = &glyphs[i];
         g->x = dest.x;
         g->y = dest.y;
         g->w = dest.w;
@@ -98,177 +114,175 @@ static void initFont(char *filename)
 
 SDL_Texture *getTextTexture(char *text, int type)
 {
-	SDL_Surface *surface;
+    SDL_Surface *surface;
 
-	surface = TTF_RenderUTF8_Blended(font, text, white);
+    /* SDL3_ttf: TTF_RenderUTF8_Blended → TTF_RenderText_Blended */
+    surface = TTF_RenderText_Blended(font, text, 0, white);
 
-	return toTexture(surface, 1);
+    return toTexture(surface, 1);
 }
 
 void drawText(char *text, int x, int y, int r, int g, int b, int align, int maxWidth)
 {
-	if (maxWidth > 0)
-	{
-		drawTextWrapped(text, x, y, r, g, b, align, maxWidth, 1);
-	}
-	else
-	{
-		drawTextLine(text, x, y, r, g, b, align);
-	}
+    if (maxWidth > 0)
+    {
+        drawTextWrapped(text, x, y, r, g, b, align, maxWidth, 1);
+    }
+    else
+    {
+        drawTextLine(text, x, y, r, g, b, align);
+    }
 }
 
 static int drawTextWrapped(char *text, int x, int y, int r, int g, int b, int align, int maxWidth, int doDraw)
 {
-	char word[MAX_WORD_LENGTH], line[MAX_LINE_LENGTH];
-	int  i, n, wordWidth, lineWidth, character, len, newLine, clearWord;
+    char word[MAX_WORD_LENGTH], line[MAX_LINE_LENGTH];
+    int  i, n, wordWidth, lineWidth, character, len, newLine, clearWord;
 
-	i = 0;
+    i = 0;
 
-	memset(word, 0, MAX_WORD_LENGTH);
-	memset(line, 0, MAX_LINE_LENGTH);
+    memset(word, 0, MAX_WORD_LENGTH);
+    memset(line, 0, MAX_LINE_LENGTH);
 
-	character = text[i++];
+    character = text[i++];
 
-	n = newLine = clearWord = lineWidth = wordWidth = 0;
+    n = newLine = clearWord = lineWidth = wordWidth = 0;
 
-	len = strlen(text);
+    len = strlen(text);
 
-	while (character)
-	{
-		if (!newLine)
-		{
-			wordWidth += glyphs[character].w * app.fontScale;
+    while (character)
+    {
+        if (!newLine)
+        {
+            wordWidth += glyphs[character].w * app.fontScale;
 
-			if (character != ' ')
-			{
-				word[n++] = character;
-			}
-		}
+            if (character != ' ')
+            {
+                word[n++] = character;
+            }
+        }
 
-		if (character == ' ' || i == len || newLine)
-		{
-			if (lineWidth + wordWidth >= maxWidth || newLine)
-			{
-				if (doDraw)
-				{
-					drawTextLine(line, x, y, r, g, b, align);
-				}
+        if (character == ' ' || i == len || newLine)
+        {
+            if (lineWidth + wordWidth >= maxWidth || newLine)
+            {
+                if (doDraw)
+                {
+                    drawTextLine(line, x, y, r, g, b, align);
+                }
 
-				memset(line, 0, MAX_LINE_LENGTH);
+                memset(line, 0, MAX_LINE_LENGTH);
 
-				y += glyphs[' '].h * app.fontScale;
+                y += glyphs[' '].h * app.fontScale;
 
-				lineWidth = 0;
+                lineWidth = 0;
 
-				newLine = 0;
-			}
+                newLine = 0;
+            }
 
-			clearWord = 1;
-		}
+            clearWord = 1;
+        }
 
-		character = text[i++];
+        character = text[i++];
 
-		if (character == '\n')
-		{
-			newLine = 1;
+        if (character == '\n')
+        {
+            newLine   = 1;
+            clearWord = 1;
+        }
 
-			clearWord = 1;
-		}
+        if (clearWord)
+        {
+            clearWord = 0;
 
-		if (clearWord)
-		{
-			clearWord = 0;
+            if (lineWidth != 0)
+            {
+                strcat(line, " ");
+            }
 
-			if (lineWidth != 0)
-			{
-				strcat(line, " ");
-			}
+            strcat(line, word);
 
-			strcat(line, word);
+            lineWidth += wordWidth;
 
-			lineWidth += wordWidth;
+            memset(word, 0, MAX_WORD_LENGTH);
 
-			memset(word, 0, MAX_WORD_LENGTH);
+            wordWidth = 0;
 
-			wordWidth = 0;
+            n = 0;
+        }
+    }
 
-			n = 0;
-		}
-	}
+    if (doDraw)
+    {
+        drawTextLine(line, x, y, r, g, b, align);
+    }
 
-	if (doDraw)
-	{
-		drawTextLine(line, x, y, r, g, b, align);
-	}
-
-	return y + glyphs[' '].h * app.fontScale;
+    return y + glyphs[' '].h * app.fontScale;
 }
 
 static void drawTextLine(char *text, int x, int y, int r, int g, int b, int align)
 {
-	int       i, character, w, h;
-	SDL_Rect *glyph, dest;
+    int       i, character, w, h;
+    SDL_Rect *glyph, dest;
 
-	if (align != TEXT_ALIGN_LEFT)
-	{
-		calcTextDimensions(text, &w, &h);
+    if (align != TEXT_ALIGN_LEFT)
+    {
+        calcTextDimensions(text, &w, &h);
 
-		if (align == TEXT_ALIGN_CENTER)
-		{
-			x -= (w / 2);
-		}
-		else if (align == TEXT_ALIGN_RIGHT)
-		{
-			x -= w;
-		}
-	}
+        if (align == TEXT_ALIGN_CENTER)
+        {
+            x -= (w / 2);
+        }
+        else if (align == TEXT_ALIGN_RIGHT)
+        {
+            x -= w;
+        }
+    }
 
-	SDL_SetTextureColorMod(fontTexture, r, g, b);
+    SDL_SetTextureColorMod(fontTexture, r, g, b);
 
-	i = 0;
+    i         = 0;
+    character = text[i++];
 
-	character = text[i++];
+    while (character)
+    {
+        glyph = &glyphs[character];
 
-	while (character)
-	{
-		glyph = &glyphs[character];
+        dest.x = x;
+        dest.y = y;
+        dest.w = glyph->w * app.fontScale;
+        dest.h = glyph->h * app.fontScale;
 
-		dest.x = x;
-		dest.y = y;
-		dest.w = glyph->w * app.fontScale;
-		dest.h = glyph->h * app.fontScale;
+        SDL_RenderTexture(app.renderer, fontTexture, glyph, &dest);
 
-		SDL_RenderTexture(app.renderer, fontTexture, glyph, &dest);
+        x += glyph->w * app.fontScale;
 
-		x += glyph->w * app.fontScale;
-
-		character = text[i++];
-	}
+        character = text[i++];
+    }
 }
 
 void calcTextDimensions(char *text, int *w, int *h)
 {
-	int       i, character;
-	SDL_Rect *g;
+    int       i, character;
+    SDL_Rect *g;
 
-	*w = *h = 0;
+    *w = *h = 0;
 
-	i = 0;
+    i         = 0;
+    character = text[i++];
 
-	character = text[i++];
+    while (character)
+    {
+        g = &glyphs[character];
 
-	while (character)
-	{
-		g = &glyphs[character];
+        *w += g->w * app.fontScale;
+        *h  = MAX(g->h * app.fontScale, *h);
 
-		*w += g->w * app.fontScale;
-		*h = MAX(g->h * app.fontScale, *h);
-
-		character = text[i++];
-	}
+        character = text[i++];
+    }
 }
 
 int getWrappedTextHeight(char *text, int maxWidth)
 {
-	return drawTextWrapped(text, 0, 0, 255, 255, 255, TEXT_ALIGN_LEFT, maxWidth, 0);
+    return drawTextWrapped(text, 0, 0, 255, 255, 255, TEXT_ALIGN_LEFT, maxWidth, 0);
 }

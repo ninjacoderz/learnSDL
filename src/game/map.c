@@ -40,20 +40,24 @@ void initMap(void)
 
 void drawMap(void)
 {
-	int x, z, n;
+    int x, z, n;
+    int drawn = 0;
 
-	for (x = 0; x < MAP_RENDER_SIZE; x++)
-	{
-		for (z = 0; z < MAP_RENDER_SIZE; z++)
-		{
-			n = world.map[x][z].tile;
+    for (x = 0; x < MAP_RENDER_SIZE; x++)
+    {
+        for (z = 0; z < MAP_RENDER_SIZE; z++)
+        {
+            n = world.map[x][z].tile;
 
-			if (n >= 0)
-			{
-				addISOObject(x, z, 0, 0, tiles[n]);
-			}
-		}
-	}
+            if (n >= 0 && tiles[n] != NULL)  // <-- thêm check tiles[n] != NULL
+            {
+                addISOObject(x, z, 0, 0, tiles[n]);
+                drawn++;
+            }
+        }
+    }
+    if (drawn == 0)
+        SDL_Log("WARNING: No tiles drawn!");
 }
 
 static void loadTiles(void)

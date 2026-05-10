@@ -4,7 +4,7 @@ project(
         MinaVillage
         VERSION 1.0
         DESCRIPTION "Mina Village farm country game"
-        LANGUAGES CXX
+        LANGUAGES C CXX
 )
 
 set(CMAKE_CXX_STANDARD 20)

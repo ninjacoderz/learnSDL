@@ -8,5 +8,5 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "defs.h"
-#include "structs.h"
+#include "Defs.h"
+#include "Structs.h"

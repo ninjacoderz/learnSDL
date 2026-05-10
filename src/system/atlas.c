@@ -22,6 +22,11 @@ void initAtlas(void)
 	memset(&atlases, 0, sizeof(AtlasImage) * NUM_ATLAS_BUCKETS);
 
 	atlasTexture = IMG_LoadTexture(app.renderer, "gfx/atlas.png");
+    if (!atlasTexture)
+    {
+        SDL_Log("Failed to load atlas texture: %s", SDL_GetError());
+        exit(1);
+    }
 
 	loadAtlasData();
 }
@@ -97,5 +102,11 @@ static void loadAtlasData(void)
 
 	cJSON_Delete(root);
 
+	int count = 0;
+	for (int i = 0; i < NUM_ATLAS_BUCKETS; i++)
+		for (AtlasImage *a = atlases[i].next; a != NULL; a = a->next)
+			count++;
+	SDL_Log("Loaded %d atlas images", count);
+	
 	free(text);
 }
