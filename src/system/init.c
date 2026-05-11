@@ -30,18 +30,17 @@ void initSDL(void)
 		printf("Couldn't initialize SDL: %s\n", SDL_GetError());
 		exit(1);
 	}
-
-	if (MIX_CreateMixerDevice(44100, SDL_AUDIO_S16, 2) < 0)
-	{
-		SDL_Log("Couldn't initialize SDL Mixer: %s", Mix_GetError());
-		exit(1);
+ 
+    if (!MIX_Init()) {
+    	SDL_Log("MIX_Init failed: %s", SDL_GetError());
+	} else {
+		SDL_Log("SDL_mixer is ready!");
 	}
 
-	Mix_ReserveChannels(2);
 
-	app.window = SDL_CreateWindow("SDL2 Isometric 01", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, windowFlags);
+	app.window = SDL_CreateWindow("SDL2 Isometric 01", SCREEN_WIDTH, SCREEN_HEIGHT, windowFlags);
 
-	app.renderer = SDL_CreateRenderer(app.window, -1, rendererFlags);
+	app.renderer = SDL_CreateRenderer(app.window, NULL);
 
 
 	if (TTF_Init() < 0)
@@ -50,7 +49,7 @@ void initSDL(void)
 		exit(1);
 	}
 
-	SDL_ShowCursor(0);
+	SDL_ShowCursor();
 }
 
 void initGameSystem(void)

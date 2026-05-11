@@ -35,7 +35,7 @@ void presentScene(void)
 
 void blit(SDL_Texture *texture, int x, int y, int center)
 {
-	SDL_Rect dest;
+	SDL_FRect dest;
 
 	dest.x = x;
 	dest.y = y;
@@ -52,7 +52,7 @@ void blit(SDL_Texture *texture, int x, int y, int center)
 
 void blitAtlasImage(AtlasImage *atlasImage, int x, int y, int center, SDL_FlipMode flip)
 {
-	SDL_Rect dest;
+	SDL_FRect dest;
 
 	dest.x = x;
 	dest.y = y;
@@ -103,7 +103,7 @@ void blitScaled(AtlasImage *atlasImage, int x, int y, int w, int h, int center)
 
 void drawRect(int x, int y, int w, int h, int r, int g, int b, int a)
 {
-	SDL_Rect rect;
+	SDL_FRect rect;
 	rect.x = x;
 	rect.y = y;
 	rect.w = w;
@@ -116,7 +116,7 @@ void drawRect(int x, int y, int w, int h, int r, int g, int b, int a)
 
 void drawOutlineRect(int x, int y, int w, int h, int r, int g, int b, int a)
 {
-	SDL_Rect rect;
+	SDL_FRect rect;
 	rect.x = x;
 	rect.y = y;
 	rect.w = w;
