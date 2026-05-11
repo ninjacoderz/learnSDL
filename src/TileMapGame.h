@@ -10,7 +10,7 @@ class TileMapGame: public Game
         void LoadData() override;
         void UnloadData(); 
         void ProcessInput() override;
-        bool Initialize(SDL_Window* _window, SDL_Renderer* _renderer) override;
+        void Initialize(SDL_Window* _window, SDL_Renderer* _renderer);
 
        private: 
         SpriteSheetActor* player;

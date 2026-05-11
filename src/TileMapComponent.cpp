@@ -32,7 +32,7 @@ void TileMapComponent::Draw(SDL_Renderer *renderer)
                                  mTileMapTexture,
                                  &srcRect,
                                  &desRect,
-                                 -GameMath::ToDegrees(mOwner->GetRotation()), 
+                                 0, 
                                  nullptr,
                                  SDL_FLIP_NONE);
             }

@@ -20,14 +20,13 @@ void TileMapGame::ProcessInput() {
     player->ProcessKeyboard(mCurrKeyboardState);
 }
 
-bool TileMapGame::Initialize(SDL_Window *_window, SDL_Renderer *_renderer)
+void TileMapGame::Initialize(SDL_Window *_window, SDL_Renderer *_renderer)
 {
     this->mWindow = _window;
     this->mRenderer = _renderer;
 	
 	LoadData();
 	mCurrKeyboardState = SDL_GetKeyboardState(nullptr);
-    return true;
 }
 
 void TileMapGame::LoadData()
@@ -40,8 +39,8 @@ void TileMapGame::LoadData()
     tileActor = new Actor(this);
     TileMapComponent* tmap = new TileMapComponent(tileActor, 6);
     tmap->LoadTileMap_CSV("Assets/MapLayer3.csv");
-    tmap->LoadTileMap_CSV("Assets/MapLayer2.csv");
-    tmap->LoadTileMap_CSV("Assets/MapLayer1.csv");
+    // tmap->LoadTileMap_CSV("Assets/MapLayer2.csv");
+    // tmap->LoadTileMap_CSV("Assets/MapLayer1.csv");
     tmap->SetTexture(GetTexture("Assets/Tiles.png"));
 }
 

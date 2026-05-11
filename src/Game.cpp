@@ -16,17 +16,14 @@ Game::Game(SDL_Window *_window,
 { 
 	SDL_Log("Game constructor called");
     this->Initialize( _window, _renderer );
+	this->LoadData();
 }
 
-bool Game::Initialize( SDL_Window* _window,
+void Game::Initialize( SDL_Window* _window,
         SDL_Renderer* _renderer)
 {
     this->mWindow = _window;
     this->mRenderer = _renderer;
-	
-	this->LoadData();
-	
-    return true;
 }
 
 void Game::Shutdown()
@@ -46,6 +43,7 @@ void Game::RunLoop()
     {
         deltaTime = 0.05f;
     }
+	
 	ProcessInput();
     UpdateGame(deltaTime);
     GenerateOutput();

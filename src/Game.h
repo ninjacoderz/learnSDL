@@ -10,7 +10,7 @@ class Game {
         Game();
         Game(SDL_Window* window, SDL_Renderer* renderer);
         // Initialize the game
-	    virtual bool Initialize(SDL_Window* _window, SDL_Renderer* _renderer);
+	    void Initialize(SDL_Window* _window, SDL_Renderer* _renderer);
         // Shutdown the game
 	    void Shutdown();
         void RunLoop();
@@ -22,7 +22,7 @@ class Game {
         void RemoveSprite(class SpriteComponent* sprite);
     protected:
         void UpdateGame(float detalTime);
-        void GenerateOutput();
+        virtual void GenerateOutput() ;
         virtual void LoadData();
         void UnloadData();
 

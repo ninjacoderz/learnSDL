@@ -23,8 +23,8 @@ set(
 file(GLOB SOURCES   src/defs.h src/structs.h src/*.c src/*.h src/*/*.c src/*/*.h)
 
 add_executable(MinaVillage
-        src/main.c 
-        ${SOURCES}
+        src/Main.cpp 
+        # ${SOURCES}
         src/Actor.cpp
         src/BGSpriteComponent.cpp
         src/Component.cpp
@@ -36,6 +36,10 @@ add_executable(MinaVillage
         src/TileMapGame.cpp
         src/SpriteSheetActor.cpp
         src/TileMapComponent.cpp
+        src/MapActor.cpp
+        src/ISORenderer.cpp
+        src/IsoMapGame.cpp
+        src/AtlasManager.cpp
 )
 
 target_include_directories(MinaVillage

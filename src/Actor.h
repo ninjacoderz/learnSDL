@@ -34,7 +34,8 @@ class Actor
         // Add/remove components
         void AddComponent(class Component* component);
         void RemoveComponent(class Component* component);
-        
+    protected: 
+        class Game* mGame;
     private:
         State mState;
         // Transform
@@ -43,6 +44,4 @@ class Actor
         float mRotation;
 
         std::vector<class Component*> mComponents;
-
-        class Game* mGame;
 };

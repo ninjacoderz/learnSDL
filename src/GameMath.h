@@ -15,7 +15,7 @@ namespace GameMath
 
 	inline float Sqrt(float value)
 	{
-		return std::sqrtf(value);
+		return std::sqrt(value);
 	}
 
 	inline float ToDegrees(float radians)
