@@ -32,7 +32,6 @@ void Game::Shutdown()
     SDL_DestroyRenderer(mRenderer);
 	SDL_DestroyWindow(mWindow);
     SDL_GL_DestroyContext(mContext);
-    SDL_Log("Game Shutdown");
 	SDL_Quit();
 }
 
@@ -43,7 +42,7 @@ void Game::RunLoop()
     {
         deltaTime = 0.05f;
     }
-	
+
 	ProcessInput();
     UpdateGame(deltaTime);
     GenerateOutput();

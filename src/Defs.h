@@ -30,9 +30,6 @@
 
 #define MAP_RENDER_SIZE           24
 
-#define MAP_RENDER_OFFSET_X       ((SCREEN_WIDTH - (TILE_WIDTH * MAP_RENDER_SIZE)) / 2)
-#define MAP_RENDER_OFFSET_Y       425
-
 #define FPS        60.0
 #define LOGIC_RATE (FPS / 1000)
 

@@ -29,7 +29,6 @@ add_executable(MinaVillage
         src/BGSpriteComponent.cpp
         src/Component.cpp
         src/Game.cpp
-        src/GameMath.cpp
         src/SpriteComponent.cpp
         src/AnimSpriteComponent.cpp
         src/MultiAnimSpriteComponent.cpp
@@ -40,6 +39,8 @@ add_executable(MinaVillage
         src/ISORenderer.cpp
         src/IsoMapGame.cpp
         src/AtlasManager.cpp
+        src/InputSystem.cpp
+        src/GameMath.cpp
 )
 
 target_include_directories(MinaVillage

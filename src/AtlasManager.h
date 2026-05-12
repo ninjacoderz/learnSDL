@@ -17,9 +17,9 @@ public:
               const std::string& pngPath,
               const std::string& jsonPath);
 
-    // Lookup theo filename, ví dụ "gfx/tiles/0.png"
-    // Trả nullptr nếu không tìm thấy
-    const AtlasEntry* GetEntry(const std::string& filename) const;
+    const AtlasEntry* GetEntry(const std::string& filename, bool required = false) const;
+
+    void Shutdown();
 
     SDL_Texture* GetTexture() const { return mAtlasTex; }
 

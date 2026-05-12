@@ -2,7 +2,7 @@
  * Copyright (C) 2022 Parallel Realities. All rights reserved.
  */
 
-#include <math.h>
+#include <GameMath.h>
 #include <SDL3/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>

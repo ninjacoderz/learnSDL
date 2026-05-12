@@ -11,11 +11,10 @@ IsoMapGame::IsoMapGame(SDL_Window* window, SDL_Renderer* renderer) {
 void IsoMapGame::LoadData() {
     auto& iso   = ISORenderer::Get();
 
-    // Port trực tiếp từ Defs.h C cũ
-    iso.tileW   = TILE_WIDTH;           // 60
-    iso.tileH   = TILE_HEIGHT;          // 30
-    iso.originX = MAP_RENDER_OFFSET_X;  // 80
-    iso.originY = MAP_RENDER_OFFSET_Y;  // 425
+    iso.tileW   = TILE_WIDTH;           
+    iso.tileH   = TILE_HEIGHT;          
+    iso.originX = MAP_RENDER_OFFSET_X;  
+    iso.originY = MAP_RENDER_OFFSET_Y;  
 
     // Load atlas
     std::string base = SDL_GetBasePath();
@@ -23,10 +22,9 @@ void IsoMapGame::LoadData() {
         base + "Assets/atlas.png",
         base + "Assets/atlas.json");
 
-    // Tạo map với MAP_RENDER_SIZE thay vì MAP_SIZE
     mMapActor = new MapActor(this);
     mMapActor->SubmitStaticTiles();
-    ISORenderer::Get().BuildStaticCache();
+    iso.BuildStaticCache();
 }
 
 void IsoMapGame::UnloadData() {
@@ -34,7 +32,35 @@ void IsoMapGame::UnloadData() {
     Game::UnloadData();
 }
 
-void IsoMapGame::ProcessInput() {}
+void IsoMapGame::ProcessInput() {
+    mInputSystem->PrepareForUpdate();
+	SDL_Event event;
+	while (SDL_PollEvent(&event))
+	{
+		switch (event.type)
+		{
+			case SDL_EVENT_QUIT:
+				mIsRunning = false;
+				break;
+			case SDL_EVENT_MOUSE_WHEEL:
+				mInputSystem->ProcessEvent(event);
+				break;
+			default:
+				break;
+		}
+	}
+
+	mInputSystem->Update();
+	const MouseState& state = mInputSystem->GetState().Mouse;
+    const Vector2 pos = state.GetPosition();
+    double sx, sy;
+    sx = pos.x - (TILE_WIDTH / 2);
+    sy = pos.y - (TILE_HEIGHT / 2);
+    sx -= MAP_RENDER_OFFSET_X;
+    sy -= MAP_RENDER_OFFSET_Y;
+    mMapActor->cursor.x =  round(((sx / TILE_WIDTH) - (sy / TILE_HEIGHT)));
+    mMapActor->cursor.z =  round(((sx / TILE_WIDTH) + (sy / TILE_HEIGHT)));
+}
 
 void IsoMapGame::GenerateOutput() {
     SDL_SetRenderDrawColor(mRenderer, 8, 8, 8, 255);
@@ -57,6 +83,12 @@ void IsoMapGame::GenerateOutput() {
 }
 
 void IsoMapGame::Initialize(SDL_Window* window, SDL_Renderer* renderer) {
-    mWindow   = window;
-    mRenderer = renderer;
+    Game::Initialize(window, renderer);
+
+    mInputSystem = new InputSystem();
+    mInputSystem->SetRelativeMouseMode(mWindow, false);
+	if (!mInputSystem->Initialize())
+	{
+		SDL_Log("Failed to initialize input system");
+	}
 }

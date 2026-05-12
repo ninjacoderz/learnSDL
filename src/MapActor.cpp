@@ -16,7 +16,7 @@ std::string MapActor::TileIndexToFilename(int index) {
 }
 
 void MapActor::GenerateMap() {
-    // Port từ initMap() trong map.c
+    
     for (int x = 0; x < MAP_SIZE; x++) {
         for (int z = 0; z < MAP_SIZE; z++) {
             if (x > 14 && x < 20) {

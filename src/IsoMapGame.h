@@ -1,6 +1,7 @@
 #pragma once
 #include "Game.h"
 #include "MapActor.h"
+#include "InputSystem.h"
 
 class IsoMapGame : public Game {
 public:
@@ -14,5 +15,7 @@ public:
 
 private:
     MapActor* mMapActor = nullptr;
+    InputSystem* mInputSystem;
+    bool mIsRunning;
     // mPlayer sẽ thêm sau khi có ISOActor
 };

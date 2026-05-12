@@ -11,32 +11,23 @@ void ISORenderer::toISO(int x, int z, float& sx, float& sy) const {
     sy = static_cast<float>(originY + (z * tileH / 2) - (x * tileH / 2));
 }
 
-// ── Static buffer (map tiles) ──────────────────────────────
 
 void ISORenderer::SubmitStatic(int x, int z, SDL_Texture* tex,
                                 SDL_FRect src, float offSX, float offSY) {
     ISOObject obj;
     toISO(x, z, obj.sx, obj.sy);
-    obj.sx += offSX;  obj.sy += offSY;
-    obj.x = x;        obj.z = z;
-    obj.tex = tex;    obj.srcRect = src;
+    obj.sx += offSX;  
+    obj.sy += offSY;
+    obj.x = x;        
+    obj.z = z;
+    obj.tex = tex;    
+    obj.srcRect = src;
     mStaticBuffer.push_back(obj);
     mStaticSorted = false;
 }
 
 void ISORenderer::BuildStaticCache() {
-    SDL_Log("BuildStaticCache: %zu objects", mStaticBuffer.size());
-    // Sort 1 lần — không cần sort lại trừ khi map thay đổi
-    int badCount = 0;
-    for (auto& obj : mStaticBuffer) {
-        if (!obj.tex || obj.srcRect.w <= 0 || obj.srcRect.h <= 0) {
-            SDL_Log("BAD object: tex=%p w=%.0f h=%.0f",
-                    obj.tex, obj.srcRect.w, obj.srcRect.h);
-            badCount++;
-        }
-    }
-    SDL_Log("BuildStaticCache: %zu total, %d bad entries",
-            mStaticBuffer.size(), badCount);
+
     std::sort(mStaticBuffer.begin(), mStaticBuffer.end(),
               [](const ISOObject& a, const ISOObject& b) {
                   return a.sy < b.sy;
@@ -66,11 +57,7 @@ void ISORenderer::ClearDynamic() {
 // ── Flush: merge static + dynamic → render ────────────────
 
 void ISORenderer::Flush(SDL_Renderer* renderer) {
-    if (!mStaticBuffer.empty()) {
-        auto& o = mStaticBuffer[0];
-        SDL_Log("First tile: sx=%.0f sy=%.0f w=%.0f h=%.0f",
-                o.sx, o.sy, o.srcRect.w, o.srcRect.h);
-    }
+
     if (!mStaticSorted) BuildStaticCache();
 
     // Sort dynamic (ít objects hơn nhiều)

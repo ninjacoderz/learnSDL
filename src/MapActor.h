@@ -5,6 +5,11 @@
 
 static constexpr int MAP_SIZE = 32;
 
+struct Cursor{
+    int x;
+    int z;
+};
+
 class MapActor : public Actor {
 public:
     MapActor(Game* game);
@@ -17,7 +22,7 @@ public:
 
     // Dùng khi map thay đổi runtime: rebuild static buffer
     void SetTile(int x, int z, int tileIndex);
-
+    Cursor cursor;
 protected:
     // UpdateActor chỉ submit dynamic objects (player, effects)
     // Map tĩnh không cần làm gì ở đây
@@ -25,6 +30,5 @@ protected:
 
 private:
     static std::string TileIndexToFilename(int index);
-
     int  mMap[MAP_SIZE][MAP_SIZE] = {};
 };
