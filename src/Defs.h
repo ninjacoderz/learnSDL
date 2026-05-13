@@ -23,8 +23,6 @@
 
 #define NUM_ATLAS_BUCKETS 64
 
-#define MAP_SIZE                  24
-
 #define TILE_HEIGHT               30
 #define TILE_WIDTH                60
 
