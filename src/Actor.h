@@ -21,8 +21,8 @@ class Actor
         virtual void UpdateActor(float deltaTime);
 
         // Getters/setters
-        const Vector2& GetPosition() const { return mPosition; }
         class Game* GetGame() { return mGame; }
+        const Vector2& GetPosition() const { return mPosition; }
         void SetPosition(const Vector2& pos) { mPosition = pos; }
         float GetScale() const { return mScale; }
         void SetScale(float scale) { mScale = scale; }
@@ -34,7 +34,10 @@ class Actor
         // Add/remove components
         void AddComponent(class Component* component);
         void RemoveComponent(class Component* component);
-    protected: 
+        virtual void ProcessInput(const struct InputState& state);
+        virtual void ActorInput(const struct InputState &state);
+
+    protected:
         class Game* mGame;
     private:
         State mState;

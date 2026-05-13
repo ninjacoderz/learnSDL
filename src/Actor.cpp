@@ -73,3 +73,18 @@ void Actor::RemoveComponent(Component* component)
 		mComponents.erase(iter);
 	}
 }
+
+void Actor::ProcessInput(const struct InputState& state)
+{
+	if (mState == EActive)
+	{
+		// First process input for components
+		for (auto comp : mComponents)
+		{
+			comp->ProcessInput(state);
+		}
+		ActorInput(state);
+	}
+}
+
+void Actor::ActorInput(const InputState& state) {}

@@ -33,7 +33,7 @@ void ISORenderer::BuildStaticCache() {
                   return a.sy < b.sy;
               });
     mStaticSorted = true;
-    SDL_Log("ISORenderer: static cache built (%zu tiles)", mStaticBuffer.size());
+    SDL_Log("ISORenderer: static cache built (%d tiles)", mStaticBuffer.size());
 }
 
 // ── Dynamic buffer (player, enemy) ────────────────────────

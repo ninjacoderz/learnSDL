@@ -33,7 +33,7 @@ typedef struct {
 } MapTile;
 
 typedef struct {
-    MapTile map[MAP_SIZE][MAP_SIZE];
+    MapTile map[MAP_RENDER_SIZE][MAP_RENDER_SIZE];
 } World;
 
 typedef struct

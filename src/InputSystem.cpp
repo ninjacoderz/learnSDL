@@ -98,7 +98,7 @@ void InputSystem::Update() {
 
     mState.Mouse.mMousePos.x = x;
     mState.Mouse.mMousePos.y = y;
-    SDL_Log("ok %d", x);
+
 }
 
 void InputSystem::ProcessEvent(union SDL_Event &event) {

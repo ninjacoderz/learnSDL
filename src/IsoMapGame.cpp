@@ -21,10 +21,8 @@ void IsoMapGame::LoadData() {
     AtlasManager::Get().Load(mRenderer,
         base + "Assets/atlas.png",
         base + "Assets/atlas.json");
-
-    mMapActor = new MapActor(this);
-    mMapActor->SubmitStaticTiles();
-    iso.BuildStaticCache();
+    
+    mMapActor = new MapActor(this); 
 }
 
 void IsoMapGame::UnloadData() {
@@ -51,15 +49,13 @@ void IsoMapGame::ProcessInput() {
 	}
 
 	mInputSystem->Update();
-	const MouseState& state = mInputSystem->GetState().Mouse;
-    const Vector2 pos = state.GetPosition();
-    double sx, sy;
-    sx = pos.x - (TILE_WIDTH / 2);
-    sy = pos.y - (TILE_HEIGHT / 2);
-    sx -= MAP_RENDER_OFFSET_X;
-    sy -= MAP_RENDER_OFFSET_Y;
-    mMapActor->cursor.x =  round(((sx / TILE_WIDTH) - (sy / TILE_HEIGHT)));
-    mMapActor->cursor.z =  round(((sx / TILE_WIDTH) + (sy / TILE_HEIGHT)));
+    const InputState& inputState = mInputSystem->GetState();
+    
+    mUpdatingActors = true;
+    for (auto actor: mActors) {
+        actor->ProcessInput(inputState);
+    }
+    mUpdatingActors = false;
 }
 
 void IsoMapGame::GenerateOutput() {

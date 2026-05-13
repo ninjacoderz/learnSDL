@@ -11,6 +11,8 @@ public:
 	virtual void Update(float deltaTime);
 
 	int GetUpdateOrder() const { return mUpdateOrder; }
+
+	virtual void ProcessInput(const struct InputState& state) {}
 protected:
 	// Owning actor
 	class Actor* mOwner;

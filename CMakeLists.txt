@@ -41,6 +41,8 @@ add_executable(MinaVillage
         src/AtlasManager.cpp
         src/InputSystem.cpp
         src/GameMath.cpp
+        src/MapActor.cpp
+        src/ISOMapComponent.cpp
 )
 
 target_include_directories(MinaVillage
