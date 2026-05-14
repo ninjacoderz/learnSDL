@@ -41,7 +41,7 @@ void ISOMapComponent::LoadISOMap() {
 
     auto& atlas = AtlasManager::Get();
     auto& iso   = ISORenderer::Get();
-
+    iso.ClearStatic();
 
     for (int x = 0; x < MAP_RENDER_SIZE; x++) {
         for (int z = 0; z < MAP_RENDER_SIZE; z++) {
@@ -59,30 +59,44 @@ void ISOMapComponent::LoadISOMap() {
                              entry->srcRect);
         }
     }
+    iso.BuildStaticCache();
     SDL_Log("MapActor: submitted %d static tiles", MAP_RENDER_SIZE * MAP_RENDER_SIZE);
 
 }
 
 void ISOMapComponent::ProcessInput(const InputState& state) {
 
-    // Tọa độ chuột trên màn hình
-    int mx = (int)state.Mouse.GetPosition().x;
-    int my = (int)state.Mouse.GetPosition().y;
+    float mx = (float)state.Mouse.GetPosition().x;
+    float my = (float)state.Mouse.GetPosition().y;
 
-    // Trừ offset để về hệ tọa độ tile-space
-    int sx = mx - MAP_RENDER_OFFSET_X;
-    int sy = my - MAP_RENDER_OFFSET_Y;
+    float sx = mx - MAP_RENDER_OFFSET_X ;
+    float sy = my - MAP_RENDER_OFFSET_Y - TILE_HEIGHT/2;
 
-    // Đảo ngược phép chiếu isometric
-    // Chia cho nửa kích thước tile vì đó là đơn vị chiếu
-    float half_w = TILE_WIDTH  / 2.0f;
-    float half_h = TILE_HEIGHT / 2.0f;
+    int selectedX = (int)floor(sx / (TILE_WIDTH) - sy / (TILE_HEIGHT));
+    int selectedY = (int)floor(sx / (TILE_WIDTH) + sy / (TILE_HEIGHT));
 
-    mSelectedX = (int)floor((sx / TILE_WIDTH - sy / TILE_HEIGHT));
-    mSelectedY = (int)floor((sy / TILE_HEIGHT + sx / TILE_WIDTH));
-
-    // Giới hạn trong bản đồ
-    if (mSelectedX < 0 || mSelectedX >= MAP_RENDER_SIZE || mSelectedY < 0 || mSelectedY >= MAP_RENDER_SIZE) return;
-
-    LoadISOMap();
+    if (selectedX < 0 || selectedX >= MAP_RENDER_SIZE ||
+        selectedY < 0 || selectedY >= MAP_RENDER_SIZE) return;
+    if(mSelectedX != selectedX || mSelectedY != selectedY) {
+        mSelectedX = selectedX;
+        mSelectedY = selectedY;
+        LoadISOMap();
+    }
+   
 }
+
+// void ISOMapComponent::ProcessInput(const InputState& state) {
+
+//     int mx = (int)state.Mouse.GetPosition().x;
+//     int my = (int)state.Mouse.GetPosition().y;
+
+//     int sx = mx - MAP_RENDER_OFFSET_X;
+//     int sy = my - MAP_RENDER_OFFSET_Y;
+
+//     mSelectedX = (int)floor((float)(sx / TILE_WIDTH) - (float)(sy / TILE_HEIGHT));
+//     mSelectedY = (int)floor((float)(sx / TILE_WIDTH) + (float)(sy / TILE_HEIGHT));
+
+//     if (mSelectedX < 0 || mSelectedX >= MAP_RENDER_SIZE || mSelectedY < 0 || mSelectedY >= MAP_RENDER_SIZE) return;
+
+//     LoadISOMap();
+// }

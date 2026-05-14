@@ -16,8 +16,6 @@ void ISORenderer::SubmitStatic(int x, int z, SDL_Texture* tex,
                                 SDL_FRect src, float offSX, float offSY) {
     ISOObject obj;
     toISO(x, z, obj.sx, obj.sy);
-    obj.sx += offSX;  
-    obj.sy += offSY;
     obj.x = x;        
     obj.z = z;
     obj.tex = tex;    
@@ -48,6 +46,10 @@ void ISORenderer::Submit(int x, int z, SDL_Texture* tex,
     obj.tex = tex;    obj.srcRect = src;
     obj.angle = angle; obj.flip = flip;
     mDynamicBuffer.push_back(obj);
+}
+
+void ISORenderer::ClearStatic() {
+    mStaticBuffer.clear();
 }
 
 void ISORenderer::ClearDynamic() {

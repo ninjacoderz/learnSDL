@@ -26,6 +26,8 @@ public:
                 float offSX = 0.f, float offSY = 0.f,
                 double angle = 0.0, SDL_FlipMode flip = SDL_FLIP_NONE);
 
+    void ClearStatic();
+
     void ClearDynamic();  // gọi đầu mỗi frame
     void Flush(SDL_Renderer* renderer); // merge static+dynamic → render
 
