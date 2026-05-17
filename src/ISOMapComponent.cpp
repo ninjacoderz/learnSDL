@@ -84,19 +84,3 @@ void ISOMapComponent::ProcessInput(const InputState& state) {
     }
    
 }
-
-// void ISOMapComponent::ProcessInput(const InputState& state) {
-
-//     int mx = (int)state.Mouse.GetPosition().x;
-//     int my = (int)state.Mouse.GetPosition().y;
-
-//     int sx = mx - MAP_RENDER_OFFSET_X;
-//     int sy = my - MAP_RENDER_OFFSET_Y;
-
-//     mSelectedX = (int)floor((float)(sx / TILE_WIDTH) - (float)(sy / TILE_HEIGHT));
-//     mSelectedY = (int)floor((float)(sx / TILE_WIDTH) + (float)(sy / TILE_HEIGHT));
-
-//     if (mSelectedX < 0 || mSelectedX >= MAP_RENDER_SIZE || mSelectedY < 0 || mSelectedY >= MAP_RENDER_SIZE) return;
-
-//     LoadISOMap();
-// }

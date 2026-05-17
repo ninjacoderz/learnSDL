@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D5A3;
+    --dark: #1A1A2E;
+    --dark2: #16213E;
+    --cream: #F8F5EE;
+    --text: #2D2D2D;
+    --muted: #6B6B6B;
+    --white: #FFFFFF;
+    --danger: #C0392B;
+    --success: #1A7A4A;
+    --info: #1565C0;
+    --agoda: #5C2D91;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; }
+
+  /* NAV */
+  nav {
+    background: var(--dark);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.4rem; letter-spacing: 2px; }
+  .logo span { color: var(--white); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul li a { color: #ccc; text-decoration: none; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+  nav ul li a:hover, nav ul li a.active { color: var(--gold); }
+  .nav-btn { background: var(--gold); color: var(--dark); border: none; padding: 8px 20px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* PAGES */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 50%, #0F3460 100%);
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero-badge { background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4); color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 1.5rem; display: inline-block; }
+  .hero h1 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 3.2rem; line-height: 1.2; margin-bottom: 1rem; font-weight: 600; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero p { color: #aaa; font-size: 1rem; max-width: 480px; line-height: 1.7; margin-bottom: 2rem; }
+
+  /* SEARCH BOX */
+  .search-box {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+  }
+  .search-field { flex: 1; min-width: 140px; }
+  .search-field label { font-size: 0.72rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .search-field input, .search-field select {
+    width: 100%;
+    border: 1.5px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-field input:focus, .search-field select:focus { border-color: var(--gold); }
+  .search-btn {
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .search-btn:hover { background: #B8942A; }
+
+  /* AGODA BANNER */
+  .agoda-banner {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .agoda-info { display: flex; align-items: center; gap: 12px; }
+  .agoda-logo { background: var(--agoda); color: white; font-weight: 700; font-size: 1rem; padding: 6px 14px; border-radius: 6px; letter-spacing: 1px; }
+  .agoda-text { color: #ccc; font-size: 0.85rem; }
+  .agoda-text strong { color: var(--gold); }
+  .agoda-link {
+    background: transparent;
+    border: 1.5px solid var(--agoda);
+    color: var(--agoda);
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .agoda-link:hover { background: var(--agoda); color: white; }
+
+  /* SECTION */
+  .section { padding: 3rem 2rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--dark); margin-bottom: 0.4rem; }
+  .section-sub { color: var(--muted); font-size: 0.88rem; margin-bottom: 2rem; }
+  .gold-line { width: 48px; height: 2px; background: var(--gold); margin-bottom: 1rem; }
+
+  /* ROOMS GRID */
+  .rooms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .room-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #EAEAEA;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .room-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+  .room-img {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+  }
+  .room-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .agoda-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--agoda);
+    color: white;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .room-info { padding: 1rem 1.25rem 1.25rem; }
+  .room-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--dark); margin-bottom: 0.3rem; }
+  .room-features { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .feat-tag { background: var(--cream); color: var(--muted); font-size: 0.72rem; padding: 3px 8px; border-radius: 4px; }
+  .room-price-row { display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; }
+  .room-price { font-size: 1.2rem; font-weight: 600; color: var(--dark); }
+  .room-price span { font-size: 0.75rem; color: var(--muted); font-weight: 400; }
+  .book-btn {
+    background: var(--dark);
+    color: var(--gold);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .book-btn:hover { background: var(--gold); color: var(--dark); }
+  .agoda-book {
+    background: var(--agoda);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    margin-left: 6px;
+  }
+
+  /* STATS */
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 0 2rem 2rem; }
+  .stat-card { background: var(--white); border: 1px solid #EAEAEA; border-radius: 10px; padding: 1.25rem; text-align: center; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; color: var(--dark); }
+  .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+  .stat-card.gold { background: var(--gold); }
+  .stat-card.gold .stat-num, .stat-card.gold .stat-label { color: var(--dark); }
+
+  /* ADMIN PAGE */
+  .admin-layout { display: grid; grid-template-columns: 240px 1fr; min-height: calc(100vh - 64px); }
+  .sidebar { background: var(--dark); padding: 1.5rem 0; }
+  .sidebar-title { color: rgba(255,255,255,0.4); font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; padding: 0 1.25rem; margin-bottom: 0.75rem; margin-top: 1rem; }
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 1.25rem;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+  .sidebar a:hover, .sidebar a.active { color: var(--gold); background: rgba(201,168,76,0.08); border-right: 2px solid var(--gold); }
+  .sidebar a i { width: 18px; font-size: 1rem; }
+  .admin-content { background: #F4F1EC; padding: 2rem; overflow-y: auto; }
+  .admin-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+  .admin-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--dark); }
+
+  /* TABLE */
+  .data-table { background: var(--white); border-radius: 10px; border: 1px solid #EAEAEA; overflow: hidden; width: 100%; }
+  .table-header { padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #EAEAEA; }
+  .table-search { border: 1.5px solid #E0E0E0; border-radius: 6px; padding: 7px 12px; font-size: 0.82rem; font-family: 'DM Sans', sans-serif; outline: none; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 10px 14px; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #EAEAEA; }
+  td { padding: 12px 14px; font-size: 0.85rem; border-bottom: 1px solid #F5F5F5; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #FAFAF8; }
+  .status { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 500; }
+  .status.confirmed { background: #E8F5E9; color: var(--success); }
+  .status.pending { background: #FFF3E0; color: #E65100; }
+  .status.cancelled { background: #FFEBEE; color: var(--danger); }
+  .status.checkin { background: #E3F2FD; color: var(--info); }
+  .source-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+  .source-badge.agoda { background: rgba(92,45,145,0.1); color: var(--agoda); }
+  .source-badge.direct { background: rgba(201,168,76,0.15); color: #8B6914; }
+  .action-btn { padding: 5px 12px; border-radius: 5px; font-size: 0.75rem; cursor: pointer; border: 1.5px solid #E0E0E0; background: transparent; font-family: 'DM Sans', sans-serif; color: var(--text); transition: all 0.15s; margin-left: 4px; }
+  .action-btn:hover { background: var(--dark); color: white; border-color: var(--dark); }
+  .action-btn.danger:hover { background: var(--danger); border-color: var(--danger); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 480px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 1.25rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px; }
+  .form-group input, .form-group select { width: 100%; border: 1.5px solid #E0E0E0; border-radius: 8px; padding: 10px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; }
+  .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 1.5rem; }
+  .btn-cancel { background: transparent; border: 1.5px solid #E0E0E0; padding: 10px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; cursor: pointer; }
+  .btn-save { background: var(--gold); border: none; color: var(--dark); padding: 10px 24px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; }
+
+  /* AGODA SECTION */
+  .agoda-section { background: var(--white); border-radius: 12px; border: 1px solid #EAEAEA; padding: 1.5rem; margin-bottom: 1.5rem; }
+  .agoda-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+  .agoda-section-logo { background: var(--agoda); color: white; font-weight: 700; font-size: 0.9rem; padding: 5px 12px; border-radius: 6px; }
+  .agoda-section-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--dark); }
+  .agoda-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .agoda-stat { text-align: center; padding: 1rem; background: #F8F5EE; border-radius: 8px; }
+  .agoda-stat-num { font-size: 1.5rem; font-weight: 600; color: var(--agoda); font-family: 'Playfair Display', serif; }
+  .agoda-stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+  .sync-btn { background: var(--agoda); color: white; border: none; padding: 8px 20px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; font-family: 'DM Sans', sans-serif; display: flex; align-items: center; gap: 6px; }
+  .sync-indicator { width: 8px; height: 8px; background: #4CAF50; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* NOTIFICATION */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--dark);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    border-left: 3px solid var(--gold);
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 700px) {
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .admin-layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .rooms-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">GRAND<span>LUXE</span></div>
+  <ul>
+    <li><a href="#" class="active" onclick="showPage('home', this)">Trang chủ</a></li>
+    <li><a href="#" onclick="showPage('rooms', this)">Phòng</a></li>
+    <li><a href="#" onclick="showPage('home', this)">Tiện nghi</a></li>
+    <li><a href="#" onclick="showPage('home', this)">Liên hệ</a></li>
+  </ul>
+  <button class="nav-btn" onclick="showPage('admin', document.querySelector('nav ul li a'))">Quản lý</button>
+</nav>
+
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-badge">⭐ Luxury 5-Star Hotel · TP. Hồ Chí Minh</div>
+    <h1>Trải nghiệm <em>đẳng cấp</em><br>không thể quên</h1>
+    <p>Đặt phòng trực tiếp hoặc qua Agoda để nhận ưu đãi tốt nhất. Hơn 50 phòng sang trọng đang chờ đón bạn.</p>
+    <div class="search-box">
+      <div class="search-field">
+        <label>Nhận phòng</label>
+        <input type="date" id="checkin" />
+      </div>
+      <div class="search-field">
+        <label>Trả phòng</label>
+        <input type="date" id="checkout" />
+      </div>
+      <div class="search-field">
+        <label>Số khách</label>
+        <select>
+          <option>1 khách</option>
+          <option>2 khách</option>
+          <option selected>2 khách, 1 trẻ em</option>
+          <option>3 khách</option>
+        </select>
+      </div>
+      <div class="search-field" style="min-width:120px">
+        <label>Loại phòng</label>
+        <select>
+          <option>Tất cả</option>
+          <option>Standard</option>
+          <option>Deluxe</option>
+          <option>Suite</option>
+        </select>
+      </div>
+      <button class="search-btn" onclick="showPage('rooms', null); showToast('Đang tìm kiếm phòng phù hợp...')">Tìm phòng</button>
+    </div>
+  </div>
+
+  <div class="agoda-banner">
+    <div class="agoda-info">
+      <div class="agoda-logo">agoda</div>
+      <div class="agoda-text">
+        Đặt qua <strong>Agoda</strong> · Nhận giảm giá đến <strong>20%</strong> · Tích điểm thành viên · Hoàn tiền AgodaCash
+      </div>
+    </div>
+    <a class="agoda-link" href="https://www.agoda.com" target="_blank">Xem trên Agoda ↗</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Phòng sang trọng</div></div>
+    <div class="stat-card gold"><div class="stat-num">4.9</div><div class="stat-label">Đánh giá Agoda</div></div>
+    <div class="stat-card"><div class="stat-num">12k+</div><div class="stat-label">Khách đã ở</div></div>
+    <div class="stat-card"><div class="stat-num">5★</div><div class="stat-label">Tiêu chuẩn quốc tế</div></div>
+  </div>
+
+  <div class="section">
+    <div class="gold-line"></div>
+    <div class="section-title">Phòng nổi bật</div>
+    <div class="section-sub">Chọn không gian hoàn hảo cho kỳ nghỉ của bạn</div>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <div class="room-img" style="background:#E8D5A3"><div style="font-size:4rem">🛏️</div><div class="room-badge">Còn 3</div></div>
+        <div class="room-info">
+          <div class="room-name">Deluxe Double Room</div>
+          <div class="room-features"><span class="feat-tag">50m²</span><span class="feat-tag">City view</span><span class="feat-tag">2 giường đơn</span></div>
+          <div class="room-price-row">
+            <div><div class="room-price">1.200.000đ <span>/ đêm</span></div></div>
+            <div>
+              <button class="book-btn" onclick="openBookingModal('Deluxe Double Room', '1.200.000đ')">Đặt ngay</button>
+              <button class="agoda-book" onclick="window.open('https://www.agoda.com','_blank')">Agoda</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-img" style="background:#C9E4DE"><div style="font-size:4rem">🌅</div><div class="room-badge">Hot deal</div><div class="agoda-tag">agoda</div></div>
+        <div class="room-info">
+          <div class="room-name">Superior Sea View</div>
+          <div class="room-features"><span class="feat-tag">65m²</span><span class="feat-tag">Sea view</span><span class="feat-tag">King bed</span></div>
+          <div class="room-price-row">
+            <div><div style="font-size:0.8rem;color:#E65100;text-decoration:line-through">1.800.000đ</div><div class="room-price">1.500.000đ <span>/ đêm</span></div></div>
+            <div>
+              <button class="book-btn" onclick="openBookingModal('Superior Sea View', '1.500.000đ')">Đặt ngay</button>
+              <button class="agoda-book" onclick="window.open('https://www.agoda.com','_blank')">Agoda</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-img" style="background:#D4C5E2"><div style="font-size:4rem">👑</div><div class="room-badge">Luxury</div></div>
+        <div class="room-info">
+          <div class="room-name">Presidential Suite</div>
+          <div class="room-features"><span class="feat-tag">120m²</span><span class="feat-tag">Panoramic</span><span class="feat-tag">Butler</span></div>
+          <div class="room-price-row">
+            <div><div class="room-price">4.500.000đ <span>/ đêm</span></div></div>
+            <div>
+              <button class="book-btn" onclick="openBookingModal('Presidential Suite', '4.500.000đ')">Đặt ngay</button>
+              <button class="agoda-book" onclick="window.open('https://www.agoda.com','_blank')">Agoda</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROOMS PAGE -->
+<div class="page" id="page-rooms">
+  <div style="background:var(--dark);padding:2rem;text-align:center">
+    <h2 style="font-family:'Playfair Display',serif;color:var(--gold);font-size:2rem">Danh sách phòng</h2>
+    <p style="color:#aaa;font-size:0.9rem;margin-top:0.5rem">Tất cả loại phòng có sẵn</p>
+  </div>
+  <div class="section">
+    <div class="rooms-grid" id="all-rooms-grid"></div>
+  </div>
+</div>
+
+<!-- ADMIN PAGE -->
+<div class="page" id="page-admin">
+  <div class="admin-layout">
+    <div class="sidebar">
+      <div style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:0.5rem">
+        <div style="font-family:'Playfair Display',serif;color:var(--gold);font-size:1rem">GrandLuxe Admin</div>
+        <div style="color:rgba(255,255,255,0.4);font-size:0.75rem;margin-top:2px">Quản lý hệ thống</div>
+      </div>
+      <div class="sidebar-title">Tổng quan</div>
+      <a class="active" onclick="switchAdmin('dashboard', this)"><i>📊</i> Dashboard</a>
+      <a onclick="switchAdmin('bookings', this)"><i>📋</i> Đặt phòng</a>
+      <a onclick="switchAdmin('rooms', this)"><i>🛏️</i> Phòng</a>
+      <div class="sidebar-title">Kết nối</div>
+      <a onclick="switchAdmin('agoda', this)"><i>🔗</i> Agoda Connect</a>
+      <div class="sidebar-title">Hệ thống</div>
+      <a onclick="showPage('home', null)"><i>🏠</i> Về trang chủ</a>
+    </div>
+
+    <div class="admin-content">
+      <!-- DASHBOARD -->
+      <div id="admin-dashboard">
+        <div class="admin-header">
+          <div class="admin-title">Dashboard</div>
+          <div style="font-size:0.8rem;color:var(--muted)">Cập nhật: hôm nay, 14:30</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem">
+          <div class="stat-card"><div class="stat-num" style="color:var(--dark)">12</div><div class="stat-label">Đặt hôm nay</div></div>
+          <div class="stat-card"><div class="stat-num" style="color:var(--success)">42</div><div class="stat-label">Đang ở</div></div>
+          <div class="stat-card gold"><div class="stat-num">89%</div><div class="stat-label">Tỉ lệ lấp đầy</div></div>
+          <div class="stat-card"><div class="stat-num" style="color:var(--dark)">156M</div><div class="stat-label">Doanh thu tháng</div></div>
+        </div>
+        <div class="agoda-section">
+          <div class="agoda-section-header">
+            <div class="agoda-section-logo">agoda</div>
+            <div class="agoda-section-title">Kết nối Agoda · <span class="sync-indicator"></span> Đồng bộ tự động</div>
+            <button class="sync-btn" style="margin-left:auto" onclick="showToast('Đồng bộ Agoda thành công! ✓')"><i>↻</i> Sync ngay</button>
+          </div>
+          <div class="agoda-stats">
+            <div class="agoda-stat"><div class="agoda-stat-num">38</div><div class="agoda-stat-label">Đặt qua Agoda tháng này</div></div>
+            <div class="agoda-stat"><div class="agoda-stat-num">4.9★</div><div class="agoda-stat-label">Đánh giá trung bình</div></div>
+            <div class="agoda-stat"><div class="agoda-stat-num">62M</div><div class="agoda-stat-label">Doanh thu từ Agoda</div></div>
+          </div>
+        </div>
+        <div class="data-table">
+          <div class="table-header"><div style="font-weight:500;font-size:0.9rem">Đặt phòng gần đây</div><button class="nav-btn" onclick="switchAdmin('bookings', null);showToast('Xem tất cả đặt phòng')">Xem tất cả</button></div>
+          <table>
+            <thead><tr><th>Mã đặt</th><th>Khách hàng</th><th>Phòng</th><th>Check-in</th><th>Nguồn</th><th>Trạng thái</th></tr></thead>
+            <tbody id="recent-bookings-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BOOKINGS -->
+      <div id="admin-bookings" style="display:none">
+        <div class="admin-header">
+          <div class="admin-title">Quản lý đặt phòng</div>
+          <button class="nav-btn" onclick="openBookingModal('', '')">+ Thêm đặt phòng</button>
+        </div>
+        <div class="data-table">
+          <div class="table-header">
+            <input class="table-search" placeholder="Tìm kiếm tên, mã đặt..." oninput="filterBookings(this.value)" />
+            <select onchange="filterStatus(this.value)" style="border:1.5px solid #E0E0E0;border-radius:6px;padding:7px 12px;font-size:0.82rem;font-family:'DM Sans',sans-serif;outline:none;">
+              <option value="">Tất cả trạng thái</option>
+              <option value="confirmed">Đã xác nhận</option>
+              <option value="pending">Chờ xử lý</option>
+              <option value="checkin">Đang ở</option>
+              <option value="cancelled">Đã hủy</option>
+            </select>
+          </div>
+          <table>
+            <thead><tr><th>Mã đặt</th><th>Khách hàng</th><th>Phòng</th><th>Check-in</th><th>Check-out</th><th>Tổng tiền</th><th>Nguồn</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+            <tbody id="all-bookings-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ROOMS ADMIN -->
+      <div id="admin-rooms" style="display:none">
+        <div class="admin-header">
+          <div class="admin-title">Quản lý phòng</div>
+          <button class="nav-btn">+ Thêm phòng</button>
+        </div>
+        <div class="data-table">
+          <table>
+            <thead><tr><th>Số phòng</th><th>Loại</th><th>Tầng</th><th>Giá/đêm</th><th>Trạng thái</th><th>Agoda</th><th>Thao tác</th></tr></thead>
+            <tbody id="rooms-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- AGODA CONNECT -->
+      <div id="admin-agoda" style="display:none">
+        <div class="admin-header">
+          <div class="admin-title">Agoda Connect</div>
+          <button class="sync-btn" onclick="showToast('Đang kết nối lại với Agoda...')">↻ Làm mới kết nối</button>
+        </div>
+        <div class="agoda-section">
+          <div class="agoda-section-header">
+            <div class="agoda-section-logo">agoda</div>
+            <div>
+              <div class="agoda-section-title">Trạng thái kết nối</div>
+              <div style="font-size:0.8rem;color:var(--success);margin-top:2px"><span class="sync-indicator"></span> Đang hoạt động · Đồng bộ lần cuối: 2 phút trước</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+            <div style="background:#F8F5EE;border-radius:8px;padding:1rem">
+              <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem">Property ID</div>
+              <div style="font-weight:500;color:var(--dark)">GLX-VN-2024-00182</div>
+            </div>
+            <div style="background:#F8F5EE;border-radius:8px;padding:1rem">
+              <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem">Kênh phân phối</div>
+              <div style="font-weight:500;color:var(--dark)">Agoda Channel Manager</div>
+            </div>
+            <div style="background:#F8F5EE;border-radius:8px;padding:1rem">
+              <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem">Đặt phòng tự động</div>
+              <div style="color:var(--success);font-weight:500">✓ Bật</div>
+            </div>
+            <div style="background:#F8F5EE;border-radius:8px;padding:1rem">
+              <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem">Đồng bộ giá/phòng</div>
+              <div style="color:var(--success);font-weight:500">✓ Tự động 2 chiều</div>
+            </div>
+          </div>
+        </div>
+        <div class="agoda-section">
+          <div class="agoda-section-header">
+            <div class="agoda-section-logo">agoda</div>
+            <div class="agoda-section-title">Cài đặt phân phối giá</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Mức giá Agoda</label><select><option selected>Giống giá trực tiếp</option><option>Giảm 5%</option><option>Giảm 10%</option></select></div>
+            <div class="form-group"><label>Commission Agoda (%)</label><input type="number" value="15" /></div>
+          </div>
+          <div class="form-group"><label>Chính sách hủy phòng</label><select><option selected>Miễn phí hủy trước 48h</option><option>Không hoàn tiền</option><option>Hoàn tiền 50% trước 24h</option></select></div>
+          <button class="btn-save" onclick="showToast('Đã lưu cài đặt Agoda ✓')">Lưu cài đặt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="booking-modal">
+  <div class="modal">
+    <div class="modal-title">Đặt phòng mới</div>
+    <div class="form-group"><label>Họ tên khách hàng</label><input type="text" id="guest-name" placeholder="Nguyễn Văn A" /></div>
+    <div class="form-row">
+      <div class="form-group"><label>Số điện thoại</label><input type="tel" placeholder="0901 234 567" /></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="email@gmail.com" /></div>
+    </div>
+    <div class="form-group"><label>Loại phòng</label><select id="modal-room"><option>Deluxe Double Room - 1.200.000đ</option><option>Superior Sea View - 1.500.000đ</option><option>Junior Suite - 2.200.000đ</option><option>Presidential Suite - 4.500.000đ</option></select></div>
+    <div class="form-row">
+      <div class="form-group"><label>Ngày nhận phòng</label><input type="date" id="modal-checkin" /></div>
+      <div class="form-group"><label>Ngày trả phòng</label><input type="date" id="modal-checkout" /></div>
+    </div>
+    <div class="form-group"><label>Nguồn đặt phòng</label><select id="modal-source"><option value="direct">Trực tiếp</option><option value="agoda">Agoda</option><option value="phone">Điện thoại</option><option value="walkin">Walk-in</option></select></div>
+    <div class="form-group"><label>Ghi chú</label><input type="text" placeholder="Yêu cầu đặc biệt, dị ứng, v.v." /></div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal()">Hủy</button>
+      <button class="btn-save" onclick="saveBooking()">Xác nhận đặt phòng</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+const rooms = [
+  {num:'101',type:'Standard',floor:1,price:'800.000đ',status:'occupied',agoda:true},
+  {num:'102',type:'Standard',floor:1,price:'800.000đ',status:'available',agoda:true},
+  {num:'201',type:'Deluxe',floor:2,price:'1.200.000đ',status:'available',agoda:true},
+  {num:'202',type:'Deluxe',floor:2,price:'1.200.000đ',status:'occupied',agoda:false},
+  {num:'301',type:'Superior',floor:3,price:'1.500.000đ',status:'available',agoda:true},
+  {num:'302',type:'Superior',floor:3,price:'1.800.000đ',status:'maintenance',agoda:true},
+  {num:'401',type:'Junior Suite',floor:4,price:'2.200.000đ',status:'available',agoda:true},
+  {num:'501',type:'Suite',floor:5,price:'3.500.000đ',status:'occupied',agoda:false},
+  {num:'PH1',type:'Presidential',floor:10,price:'4.500.000đ',status:'available',agoda:false},
+];
+
+const bookings = [
+  {id:'BK240301',guest:'Trần Minh Khoa',room:'Deluxe 201',checkin:'2024-03-01',checkout:'2024-03-04',total:'3.600.000đ',source:'agoda',status:'confirmed'},
+  {id:'BK240302',guest:'Nguyễn Thị Lan',room:'Superior 301',checkin:'2024-03-02',checkout:'2024-03-05',total:'4.500.000đ',source:'direct',status:'checkin'},
+  {id:'BK240303',guest:'Lê Hoàng Nam',room:'Suite 501',checkin:'2024-03-03',checkout:'2024-03-06',total:'10.500.000đ',source:'agoda',status:'confirmed'},
+  {id:'BK240304',guest:'Phạm Thu Hà',room:'Standard 101',checkin:'2024-03-04',checkout:'2024-03-07',total:'2.400.000đ',source:'phone',status:'pending'},
+  {id:'BK240305',guest:'Võ Đình Tùng',room:'Deluxe 202',checkin:'2024-03-05',checkout:'2024-03-08',total:'3.600.000đ',source:'agoda',status:'confirmed'},
+  {id:'BK240306',guest:'Đặng Thị Mai',room:'Presidential PH1',checkin:'2024-03-06',checkout:'2024-03-09',total:'13.500.000đ',source:'direct',status:'pending'},
+  {id:'BK240307',guest:'Hoàng Văn Bình',room:'Junior Suite 401',checkin:'2024-03-07',checkout:'2024-03-10',total:'6.600.000đ',source:'agoda',status:'cancelled'},
+  {id:'BK240308',guest:'Bùi Thị Ngọc',room:'Superior 301',checkin:'2024-03-08',checkout:'2024-03-09',total:'1.500.000đ',source:'walkin',status:'checkin'},
+];
+
+let filteredBookings = [...bookings];
+
+function showPage(page, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+  if (el) el.classList.add('active');
+  if (page === 'rooms') renderAllRooms();
+  if (page === 'admin') { renderRecentBookings(); renderAllBookings(); renderRoomsTable(); }
+}
+
+function switchAdmin(section, el) {
+  ['dashboard','bookings','rooms','agoda'].forEach(s => {
+    const el2 = document.getElementById('admin-' + s);
+    if(el2) el2.style.display = 'none';
+  });
+  document.getElementById('admin-' + section).style.display = 'block';
+  document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+  if(el) el.classList.add('active');
+}
+
+function renderAllRooms() {
+  const allRooms = [
+    {name:'Standard Room',bg:'#E8E8E8',emoji:'🏠',price:'800.000đ',size:'35m²',view:'City view',bed:'2 giường đơn'},
+    {name:'Deluxe Double Room',bg:'#E8D5A3',emoji:'🛏️',price:'1.200.000đ',size:'50m²',view:'City view',bed:'2 giường đơn'},
+    {name:'Superior Sea View',bg:'#C9E4DE',emoji:'🌅',price:'1.500.000đ',size:'65m²',view:'Sea view',bed:'King bed'},
+    {name:'Junior Suite',bg:'#D5E4C3',emoji:'🌿',price:'2.200.000đ',size:'80m²',view:'Garden view',bed:'King bed'},
+    {name:'Executive Suite',bg:'#C5D5E8',emoji:'🏙️',price:'3.500.000đ',size:'100m²',view:'Panoramic',bed:'King bed'},
+    {name:'Presidential Suite',bg:'#D4C5E2',emoji:'👑',price:'4.500.000đ',size:'120m²',view:'360°',bed:'King bed'},
+  ];
+  document.getElementById('all-rooms-grid').innerHTML = allRooms.map(r => `
+    <div class="room-card">
+      <div class="room-img" style="background:${r.bg}"><div style="font-size:4rem">${r.emoji}</div></div>
+      <div class="room-info">
+        <div class="room-name">${r.name}</div>
+        <div class="room-features"><span class="feat-tag">${r.size}</span><span class="feat-tag">${r.view}</span><span class="feat-tag">${r.bed}</span></div>
+        <div class="room-price-row">
+          <div class="room-price">${r.price} <span>/ đêm</span></div>
+          <div>
+            <button class="book-btn" onclick="openBookingModal('${r.name}','${r.price}')">Đặt ngay</button>
+            <button class="agoda-book" onclick="window.open('https://www.agoda.com','_blank')">Agoda</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderRecentBookings() {
+  document.getElementById('recent-bookings-tbody').innerHTML = bookings.slice(0,5).map(b => `
+    <tr>
+      <td><span style="font-family:monospace;font-size:0.8rem;color:var(--muted)">${b.id}</span></td>
+      <td><strong>${b.guest}</strong></td>
+      <td>${b.room}</td>
+      <td>${b.checkin}</td>
+      <td><span class="source-badge ${b.source==='agoda'?'agoda':'direct'}">${b.source==='agoda'?'agoda':'trực tiếp'}</span></td>
+      <td><span class="status ${b.status}">${{confirmed:'Đã xác nhận',pending:'Chờ xử lý',cancelled:'Đã hủy',checkin:'Đang ở'}[b.status]}</span></td>
+    </tr>
+  `).join('');
+}
+
+function renderAllBookings() {
+  document.getElementById('all-bookings-tbody').innerHTML = filteredBookings.map(b => `
+    <tr>
+      <td><span style="font-family:monospace;font-size:0.8rem;color:var(--muted)">${b.id}</span></td>
+      <td><strong>${b.guest}</strong></td>
+      <td>${b.room}</td>
+      <td>${b.checkin}</td>
+      <td>${b.checkout}</td>
+      <td style="font-weight:500">${b.total}</td>
+      <td><span class="source-badge ${b.source==='agoda'?'agoda':'direct'}">${b.source==='agoda'?'agoda':b.source}</span></td>
+      <td><span class="status ${b.status}">${{confirmed:'Đã xác nhận',pending:'Chờ xử lý',cancelled:'Đã hủy',checkin:'Đang ở'}[b.status]}</span></td>
+      <td>
+        <button class="action-btn" onclick="showToast('Đang xem chi tiết ${b.id}')">Chi tiết</button>
+        <button class="action-btn danger" onclick="showToast('Đã hủy đặt phòng ${b.id}')">Hủy</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function renderRoomsTable() {
+  document.getElementById('rooms-tbody').innerHTML = rooms.map(r => `
+    <tr>
+      <td><strong>${r.num}</strong></td>
+      <td>${r.type}</td>
+      <td>Tầng ${r.floor}</td>
+      <td>${r.price}/đêm</td>
+      <td><span class="status ${{available:'confirmed',occupied:'checkin',maintenance:'pending'}[r.status]}">${{available:'Trống',occupied:'Đang ở',maintenance:'Bảo trì'}[r.status]}</span></td>
+      <td>${r.agoda ? '<span style="color:var(--agoda);font-size:0.8rem;font-weight:600">✓ Agoda</span>' : '<span style="color:var(--muted);font-size:0.8rem">—</span>'}</td>
+      <td>
+        <button class="action-btn" onclick="showToast('Chỉnh sửa phòng ${r.num}')">Sửa</button>
+        <button class="action-btn" onclick="showToast('Cài đặt Agoda cho phòng ${r.num}')">Agoda</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function filterBookings(val) {
+  filteredBookings = val ? bookings.filter(b => b.guest.toLowerCase().includes(val.toLowerCase()) || b.id.toLowerCase().includes(val.toLowerCase())) : [...bookings];
+  renderAllBookings();
+}
+
+function filterStatus(val) {
+  filteredBookings = val ? bookings.filter(b => b.status === val) : [...bookings];
+  renderAllBookings();
+}
+
+function openBookingModal(room, price) {
+  document.getElementById('booking-modal').classList.add('show');
+  if (room) {
+    const opts = document.getElementById('modal-room').options;
+    for(let o of opts) { if(o.text.includes(room.split(' ')[0])) { o.selected = true; break; } }
+  }
+  const today = new Date();
+  const next = new Date(today); next.setDate(next.getDate()+2);
+  document.getElementById('modal-checkin').value = today.toISOString().split('T')[0];
+  document.getElementById('modal-checkout').value = next.toISOString().split('T')[0];
+}
+
+function closeModal() {
+  document.getElementById('booking-modal').classList.remove('show');
+}
+
+function saveBooking() {
+  const name = document.getElementById('guest-name').value || 'Khách mới';
+  closeModal();
+  showToast(`Đặt phòng cho ${name} thành công! ✓`);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+document.getElementById('booking-modal').addEventListener('click', function(e) {
+  if(e.target === this) closeModal();
+});
+
+const today = new Date().toISOString().split('T')[0];
+if(document.getElementById('checkin')) document.getElementById('checkin').value = today;
+const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate()+2);
+if(document.getElementById('checkout')) document.getElementById('checkout').value = tomorrow.toISOString().split('T')[0];
+</script>
+</body>
+</html>
